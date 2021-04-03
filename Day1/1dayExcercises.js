@@ -6,7 +6,7 @@ comments can make code readable,
 easy to reuse and informative
 */
 
-//Declare gour variables without assigning values
+//Declare our variables without assigning values
 let lunita
 let matilda
 let saori
