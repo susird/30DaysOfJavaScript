@@ -223,7 +223,7 @@ function driveAge() {
 
 /*14.Write a script that prompt the user to enter number of years. Calculate the number 
 of seconds a person can live. Assume some one lives just hundred years*/
-function secondsLive () {
+function secondsLive() {
   let birthYear = prompt('Enter number of yours you live',);
   let seccondsYear = 31536000
   let calculate = birthYear * seccondsYear
@@ -244,12 +244,24 @@ console.log(`${day}-${month}-${todayYear} ${hours}:${minutes}`)
 //iii.
 console.log(`${day}/${month}/${todayYear} ${hours}:${minutes}`)
 
-/*Create a human readable time format using the Date time object. The hour and the minute should be all
- the time two digits(7 hours should be 07 and 5 minutes should be 05 )*/ 
 let dateYear = now.getFullYear()
 let dateMonth = now.getMonth() + 1
-let dateDay =  now.getDay()
-let d = new Date("2015-03-25T12:00:00-06:30");
-let dateHours = d.getHours()
-let dateMinutes = d.getMinutes()
-console.log(`${dateYear}-${dateMonth}-${dateDay} ${dateHours}:${dateMinutes}`)
+let dateDay = now.getDay()
+
+function twoDigitsHour() {
+  let dateHours = now.getHours()
+  if (dateHours < 10) {
+    return hour = "0" + dateHours
+  } else {
+    return dateHours
+  }
+}
+function twoDigitsMin() {
+  let dateMinutes = now.getMinutes()
+  if (dateMinutes < 10) {
+    return min = "0" + dateMinutes
+  } else {
+    return dateMinutes
+  }
+}
+console.log(`${dateYear}-${dateMonth}-${dateDay}` + " " + twoDigitsHour() + ":" + twoDigitsMin())
