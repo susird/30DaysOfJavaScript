@@ -225,8 +225,8 @@ function driveAge() {
 of seconds a person can live. Assume some one lives just hundred years*/
 function secondsLive() {
   let birthYear = prompt('Enter number of yours you live',);
-  let seccondsYear = 31536000
-  let calculate = birthYear * seccondsYear
+  let seccondsYear = 31536000;
+  let calculate = birthYear * seccondsYear;
   alert(`You lived ${calculate} seconds.`);
 }
 //console.log(secondsLive())
@@ -249,7 +249,7 @@ let dateMonth = now.getMonth() + 1
 let dateDay = now.getDay()
 
 function twoDigitsHour() {
-  let dateHours = now.getHours()
+  let dateHours = now.getHours();
   if (dateHours < 10) {
     return hour = "0" + dateHours
   } else {
@@ -257,7 +257,7 @@ function twoDigitsHour() {
   }
 }
 function twoDigitsMin() {
-  let dateMinutes = now.getMinutes()
+  let dateMinutes = now.getMinutes();
   if (dateMinutes < 10) {
     return min = "0" + dateMinutes
   } else {
