@@ -187,7 +187,7 @@ function sizeLength() {
 function compareLength() {
   const yourName = prompt('Insert your name here',);
   const familyName = prompt('Insert your family name here',);
-  if (yourName.length > familyName.length) {
+  if (yourName.length >= familyName.length) {
     alert(`Your firs name, ${yourName} is longer than your family name, ${familyName}`);
   } else {
     alert(`Your family name, ${familyName} is longer than your firs name, ${yourName}`);
