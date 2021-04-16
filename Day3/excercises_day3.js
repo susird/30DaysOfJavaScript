@@ -22,12 +22,12 @@ console.log(typeof year)
 console.log('10' === 10)
 
 //3. Check if parseInt('9.8') is equal to 10
-console.log(parseInt('9.8') == 10)
+console.log(parseInt('9.8') === 10)
 
 //4. Boolean value is either true or false.
 //i. Write three JavaScript statement which provide truthy value.
 console.log(3 === 3)
-console.log('potato' != 'minino')
+console.log('potato' !== 'minino')
 console.log(100 < 1000)
 //ii.Write three JavaScript statement which provide falsy value.
 console.log('potato' === 'minino')
@@ -94,8 +94,8 @@ console.log(now.getTime())
 /*1.Write a script that prompt the user to enter base and height of the triangle
  and calculate an area of a triangle (area = 0.5 x b x h).*/
 function triangleArea() {
-  let base = prompt('Insert base here',);
-  let height = prompt('Insert height gere',);
+  const base = prompt('Insert base here',);
+  const height = prompt('Insert height gere',);
   let area = ((0.5) * base * height);
   alert(`The area of the triangle is  ${area}`)
 }
@@ -104,10 +104,10 @@ function triangleArea() {
 /*2.Write a script that prompt the user to enter side a, side b, and side c of the triangle  
 and calculate the perimeter of triangle (perimeter = a + b + c)*/
 function perimeterArea() {
-  let sideA = prompt('Insert base here side a',);
-  let sideB = prompt('Insert base here side b',);
-  let sideC = prompt('Insert base here side c',);
-  let perimeter = (sideA + sideB + sideC);
+  const sideA = prompt('Insert base here side a',);
+  const sideB = prompt('Insert base here side b',);
+  const sideC = prompt('Insert base here side c',);
+  const perimeter = (sideA + sideB + sideC);
   alert(`The perimeter of the triangle is  ${perimeter}`)
 }
 //console.log(perimeterArea())
@@ -115,10 +115,10 @@ function perimeterArea() {
 /*Get length(largo) and width using prompt and calculate an area of rectangle 
 (area = length x width and the perimeter of rectangle (perimeter = 2 x (length + width)) */
 function rectangle() {
-  let length = prompt('Insert length here',);
-  let width = prompt('Insert width here',);
-  let recArea = (length * width);
-  let recperimeter = ((2) * (length + width));
+  const length = prompt('Insert length here',);
+  const width = prompt('Insert width here',);
+  const recArea = (length * width);
+  const recperimeter = ((2) * (length + width));
   alert(`The area of the rectangle is  ${recArea}`);
   alert(`The perimeter of the rectangle is ${recperimeter}`)
 }
@@ -128,9 +128,9 @@ function rectangle() {
 and circumference of a circle(c = 2 x pi x r) where pi = 3.14.*/
 
 function circleArea() {
-  let circRadius = prompt('Insert radius here',);
-  let circArea = (Math.PI * circRadius * circRadius);
-  let circumf = ((2) * Math.PI * circRadius);
+  const circRadius = prompt('Insert radius here',);
+  const circArea = (Math.PI * circRadius * circRadius);
+  const circumf = ((2) * Math.PI * circRadius);
   alert(`The area of the circle is  ${circArea}`);
   alert(`The circumference of the circle is  ${circumf}`)
 }
@@ -158,23 +158,23 @@ function calcSlope(coordinates) {
 
 //8. Calculate the value of y (y = x^2 + 6x + 9). Try to use different x values and figure out at what x value y is 0
 function calculateY() {
-  let range = [-8, -7, -6, -5, -6, -5, -4, -3, -2, -1, 0];
+  const range = [-8, -7, -6, -5, -6, -5, -4, -3, -2, -1, 0];
   return range.map(x => Math.pow(x, 2) + 6 * x + 9)
 }
 console.log(calculateY())
 
-//9. Writ a script that prompt a user to enter hours and rate per hour. Calculate pay of the person?
+//9. Write a script that prompt a user to enter hours and rate per hour. Calculate pay of the person?
 function pay() {
-  let hours = prompt('Insert hours here',);
-  let rate = prompt(`Insert rate per hour here`,);
-  let payment = (hours * rate);
+  const hours = prompt('Insert hours here',);
+  const rate = prompt(`Insert rate per hour here`,);
+  const payment = (hours * rate);
   alert(`Your weekly earning is ${payment}`)
 }
 //console.log(pay())
 
 //10.If the length of your name is greater than 7 say, your name is long else say your name is short.
 function sizeLength() {
-  let name = prompt('Insert your name here',);
+  const name = prompt('Insert your name here',);
   if (name.length > 7) {
     alert(`Your name is long`);
   } else {
@@ -185,8 +185,8 @@ function sizeLength() {
 
 //11. Compare your first name length and your family name length and you should get this output.
 function compareLength() {
-  let yourName = prompt('Insert your name here',);
-  let familyName = prompt('Insert your family name here',);
+  const yourName = prompt('Insert your name here',);
+  const familyName = prompt('Insert your family name here',);
   if (yourName.length > familyName.length) {
     alert(`Your firs name, ${yourName} is longer than your family name, ${familyName}`);
   } else {
@@ -197,8 +197,8 @@ function compareLength() {
 
 //12. Declare two variables myAge and yourAge and assign them initial values and myAge and yourAge.
 function compareAges() {
-  let myAge = 250;
-  let yourAge = prompt('Insert your age here',);
+  const myAge = 250;
+  const yourAge = prompt('Insert your age here',);
   if (myAge > yourAge) {
     alert(`I am ${myAge - yourAge} years older than you.`);
   }
@@ -208,11 +208,11 @@ function compareAges() {
 /*13.Using prompt get the year the user was born and if the user is 18 or above allow
 the user to drive if not tell the user to wait a certain amount of years.*/
 function driveAge() {
-  let birthYear = prompt('Insert your birth year here',);
-  let today = 2021;
-  let ofAge = 2003;
-  let yearsOfAge = birthYear - ofAge;
-  let age = today - birthYear;
+  const birthYear = prompt('Insert your birth year here',);
+  const today = 2021;
+  const ofAge = 2003;
+  const yearsOfAge = birthYear - ofAge;
+  const age = today - birthYear;
   if (birthYear < 18) {
     alert(`You will be allowed to drive after ${yearsOfAge} years`);
   } else {
@@ -224,9 +224,9 @@ function driveAge() {
 /*14.Write a script that prompt the user to enter number of years. Calculate the number 
 of seconds a person can live. Assume some one lives just hundred years*/
 function secondsLive() {
-  let birthYear = prompt('Enter number of yours you live',);
-  let seccondsYear = 31536000;
-  let calculate = birthYear * seccondsYear;
+  const age = prompt('Enter your age');
+  const seccondsYear = 31536000;
+  const calculate = age * seccondsYear;
   alert(`You lived ${calculate} seconds.`);
 }
 //console.log(secondsLive())
@@ -244,24 +244,15 @@ console.log(`${day}-${month}-${todayYear} ${hours}:${minutes}`)
 //iii.
 console.log(`${day}/${month}/${todayYear} ${hours}:${minutes}`)
 
-let dateYear = now.getFullYear()
-let dateMonth = now.getMonth() + 1
-let dateDay = now.getDay()
+const dateYear = now.getFullYear()
+const dateMonth = now.getMonth() + 1
+const dateDay = now.getDay()
 
 function twoDigitsHour() {
-  let dateHours = now.getHours();
-  if (dateHours < 10) {
-    return hour = "0" + dateHours
-  } else {
-    return dateHours
-  }
+  const formatTwoDigits = (numberToFormat) => numberToFormat < 10 ? `0${numberToFormat}` : String(numberToFormat)
+  const dateHours = now.getHours();
+  const dateMinutes = now.getMinutes();
+  formatTwoDigits(dateHours);
+  formatTwoDigits(dateMinutes);
 }
-function twoDigitsMin() {
-  let dateMinutes = now.getMinutes();
-  if (dateMinutes < 10) {
-    return min = "0" + dateMinutes
-  } else {
-    return dateMinutes
-  }
-}
-console.log(`${dateYear}-${dateMonth}-${dateDay}` + " " + twoDigitsHour() + ":" + twoDigitsMin())
+console.log(`${dateYear}-${dateMonth}-${dateDay}` + " " + twoDigitsHour() + ":" + twoDigitsHour())
