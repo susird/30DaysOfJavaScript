@@ -1,14 +1,14 @@
 // Level 1
 /*1. Declare firstName, lastName, country, city, age, isMarried, year variable and assign value to it and use the
  typeof operator to check different data types.*/
-let firstName = 'Susana'
-let lastName = 'Ruiz'
-let country = 'Colombia'
-let city = 'Medellín'
-let age = 26
-let isMarried = false
-let now = new Date()
-let year = now.getFullYear()
+const firstName = 'Susana'
+const lastName = 'Ruiz'
+const country = 'Colombia'
+const city = 'Medellín'
+const age = 26
+const isMarried = false
+const now = new Date()
+const year = now.getFullYear()
 
 console.log(typeof firstName)
 console.log(typeof lastName)
@@ -94,9 +94,9 @@ console.log(now.getTime())
 /*1.Write a script that prompt the user to enter base and height of the triangle
  and calculate an area of a triangle (area = 0.5 x b x h).*/
 function triangleArea() {
-  const base = prompt('Insert base here',);
-  const height = prompt('Insert height gere',);
-  let area = ((0.5) * base * height);
+  const base = prompt('Insert base here');
+  const height = prompt('Insert height gere');
+  const area = ((0.5) * base * height);
   alert(`The area of the triangle is  ${area}`)
 }
 //console.log(triangleArea())
@@ -104,9 +104,9 @@ function triangleArea() {
 /*2.Write a script that prompt the user to enter side a, side b, and side c of the triangle  
 and calculate the perimeter of triangle (perimeter = a + b + c)*/
 function perimeterArea() {
-  const sideA = prompt('Insert base here side a',);
-  const sideB = prompt('Insert base here side b',);
-  const sideC = prompt('Insert base here side c',);
+  const sideA = prompt('Insert base here side a');
+  const sideB = prompt('Insert base here side b');
+  const sideC = prompt('Insert base here side c');
   const perimeter = (sideA + sideB + sideC);
   alert(`The perimeter of the triangle is  ${perimeter}`)
 }
@@ -115,8 +115,8 @@ function perimeterArea() {
 /*Get length(largo) and width using prompt and calculate an area of rectangle 
 (area = length x width and the perimeter of rectangle (perimeter = 2 x (length + width)) */
 function rectangle() {
-  const length = prompt('Insert length here',);
-  const width = prompt('Insert width here',);
+  const length = prompt('Insert length here');
+  const width = prompt('Insert width here');
   const recArea = (length * width);
   const recperimeter = ((2) * (length + width));
   alert(`The area of the rectangle is  ${recArea}`);
@@ -128,7 +128,7 @@ function rectangle() {
 and circumference of a circle(c = 2 x pi x r) where pi = 3.14.*/
 
 function circleArea() {
-  const circRadius = prompt('Insert radius here',);
+  const circRadius = prompt('Insert radius here');
   const circArea = (Math.PI * circRadius * circRadius);
   const circumf = ((2) * Math.PI * circRadius);
   alert(`The area of the circle is  ${circArea}`);
@@ -138,7 +138,7 @@ function circleArea() {
 
 //5.Calculate the slope, x-intercept and y-intercept of y = 2x -2
 function slopeCalculate() {
-  let x = prompt('Insert the intercept here',);
+  let x = prompt('Insert the intercept here');
   let y = ((2 * x) - 2);
   alert(`The slope is  ${y}/${x}`)
 }
@@ -165,8 +165,8 @@ console.log(calculateY())
 
 //9. Write a script that prompt a user to enter hours and rate per hour. Calculate pay of the person?
 function pay() {
-  const hours = prompt('Insert hours here',);
-  const rate = prompt(`Insert rate per hour here`,);
+  const hours = prompt('Insert hours here');
+  const rate = prompt('Insert rate per hour here');
   const payment = (hours * rate);
   alert(`Your weekly earning is ${payment}`)
 }
@@ -174,7 +174,7 @@ function pay() {
 
 //10.If the length of your name is greater than 7 say, your name is long else say your name is short.
 function sizeLength() {
-  const name = prompt('Insert your name here',);
+  const name = prompt('Insert your name here');
   if (name.length > 7) {
     alert(`Your name is long`);
   } else {
@@ -185,8 +185,8 @@ function sizeLength() {
 
 //11. Compare your first name length and your family name length and you should get this output.
 function compareLength() {
-  const yourName = prompt('Insert your name here',);
-  const familyName = prompt('Insert your family name here',);
+  const yourName = prompt('Insert your name here');
+  const familyName = prompt('Insert your family name here');
   if (yourName.length >= familyName.length) {
     alert(`Your firs name, ${yourName} is longer than your family name, ${familyName}`);
   } else {
@@ -198,7 +198,7 @@ function compareLength() {
 //12. Declare two variables myAge and yourAge and assign them initial values and myAge and yourAge.
 function compareAges() {
   const myAge = 250;
-  const yourAge = prompt('Insert your age here',);
+  const yourAge = prompt('Insert your age here');
   if (myAge > yourAge) {
     alert(`I am ${myAge - yourAge} years older than you.`);
   }
@@ -208,7 +208,7 @@ function compareAges() {
 /*13.Using prompt get the year the user was born and if the user is 18 or above allow
 the user to drive if not tell the user to wait a certain amount of years.*/
 function driveAge() {
-  const birthYear = prompt('Insert your birth year here',);
+  const birthYear = prompt('Insert your birth year here');
   const today = 2021;
   const ofAge = 2003;
   const yearsOfAge = birthYear - ofAge;
@@ -233,11 +233,11 @@ function secondsLive() {
 
 //15. Create a human readable time format using the Date time object
 //. i 
-let todayYear = now.getFullYear()
-let month = now.getMonth() + 1
-let day = now.getDay()
-let hours = now.getHours()
-let minutes = now.getMinutes()
+const todayYear = now.getFullYear()
+const month = now.getMonth() + 1
+const day = now.getDay()
+const hours = now.getHours()
+const minutes = now.getMinutes()
 console.log(`${todayYear}-${month}-${day} ${hours}:${minutes}`)
 //ii. 
 console.log(`${day}-${month}-${todayYear} ${hours}:${minutes}`)
