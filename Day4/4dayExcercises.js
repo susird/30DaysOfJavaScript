@@ -2,11 +2,11 @@
 /*1. Get user input using prompt(“Enter your age:”). If user is 18 or older , give feedback:'You are old
 enough to drive' but if not 18 give another feedback stating to wait for the number of years he neds to turn 18.*/
 function ageUser() {
-  let oldUser = prompt('Enter your age: ')
-  let ofAge = 18
-  let underAge = (18 - oldUser);
+  const oldUser = prompt('Enter your age:');
+  const ofAge = 18;
+  const underAge = (18 - oldUser);
   if (oldUser >= ofAge) {
-    alert(`You are old enough to drive.`)
+    alert(`You are old enough to drive.`);
   } else {
     alert(`You are left with ${underAge} years to drive.`)
   }
@@ -16,19 +16,19 @@ console.log(ageUser())
 /*2. Compare the values of myAge and yourAge using if … else. Based on the comparison and log the result to console
  stating who is older (me or you). Use prompt(“Enter your age:”) to get the age as input.*/
 function compareAges() {
-  let myAge = 26;
-  let yourAge = prompt('Enter your age:');
-  let youOlderThan = yourAge - myAge;
-  let meOlderThan = myAge - yourAge;
+  const myAge = 26;
+  const yourAge = prompt('Enter your age:');
+  const youOlderThan = yourAge - myAge;
+  const meOlderThan = myAge - yourAge;
   if (yourAge > myAge) {
-    alert(`You are ${youOlderThan} years older than me.`)
+    alert(`You are ${youOlderThan} years older than me.`);
   } else {
     alert(`I'm ${meOlderThan} years older than you.`)
   }
 }
 console.log(compareAges())
 
-//3. If a is greater than b return 'a is greater than b' else 'a is less than b'. Try to implement it in to ways
+//3. If a is greater than b return 'a is greater than b' else 'a is less than b'. Try to implement it in two ways
 function greaterThan() {
   const a = prompt('Enter number a');
   const b = prompt('Enter number b');
@@ -40,16 +40,18 @@ function greaterThan() {
 }
 console.log(greaterThan())
 
-//let c = prompt('Enter number c')
-//let d = prompt('Enter number d')
-//let compare = c > d ? alert(`${c} is greater than ${d}`) : alert(`${d} is greater than ${c}`)
-//console.log(compare)
+// second way
+const c = prompt('Enter number c')
+const d = prompt('Enter number d')
+const compare = c > d ? alert(`${c} is greater than ${d}`) : alert(`${d} is greater than ${c}`)
+console.log(compare)
+
 
 //4. Even numbers are divisible by 2 and the remainder is zero. How do you check, if a number is even or not using JavaScript?
 function EvenNumber() {
-  const number = prompt('Enter a number:')
+  const number = prompt('Enter a number:');
   if (number % 2 == 0) {
-    return alert(`${number} is an even number`)
+    return alert(`${number} is an even number`);
   } else {
     return alert(`${number} is an odd number.`)
   }
