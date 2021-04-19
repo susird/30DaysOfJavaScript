@@ -99,7 +99,7 @@ function triangleArea() {
   const area = ((0.5) * base * height);
   alert(`The area of the triangle is  ${area}`)
 }
-//console.log(triangleArea())
+triangleArea()
 
 /*2.Write a script that prompt the user to enter side a, side b, and side c of the triangle  
 and calculate the perimeter of triangle (perimeter = a + b + c)*/
@@ -110,31 +110,31 @@ function perimeterArea() {
   const perimeter = (sideA + sideB + sideC);
   alert(`The perimeter of the triangle is  ${perimeter}`)
 }
-//console.log(perimeterArea())
+perimeterArea()
 
-/*Get length(largo) and width using prompt and calculate an area of rectangle 
+/*Get length and width using prompt and calculate an area of rectangle 
 (area = length x width and the perimeter of rectangle (perimeter = 2 x (length + width)) */
 function rectangle() {
   const length = prompt('Insert length here');
   const width = prompt('Insert width here');
-  const recArea = (length * width);
-  const recperimeter = ((2) * (length + width));
-  alert(`The area of the rectangle is  ${recArea}`);
-  alert(`The perimeter of the rectangle is ${recperimeter}`)
+  const rectArea = (length * width);
+  const rectperimeter = ((2) * (length + width));
+  alert(`The area of the rectangle is  ${rectArea}`);
+  alert(`The perimeter of the rectangle is ${rectperimeter}`)
 }
-//console.log(rectangle())
+rectangle()
 
 /*Get radius using prompt and calculate the area of a circle (area = pi x r x r) 
 and circumference of a circle(c = 2 x pi x r) where pi = 3.14.*/
 
 function circleArea() {
-  const circRadius = prompt('Insert radius here');
-  const circArea = (Math.PI * circRadius * circRadius);
-  const circumf = ((2) * Math.PI * circRadius);
-  alert(`The area of the circle is  ${circArea}`);
-  alert(`The circumference of the circle is  ${circumf}`)
+  const radius = prompt('Insert radius here');
+  const circleArea = (Math.PI * radius * radius);
+  const circum = ((2) * Math.PI * radius);
+  alert(`The area of the circle is  ${circleArea}`);
+  alert(`The circumference of the circle is  ${circum}`)
 }
-//console.log(circleArea())
+circleArea()
 
 //5.Calculate the slope, x-intercept and y-intercept of y = 2x -2
 function slopeCalculate() {
@@ -142,26 +142,24 @@ function slopeCalculate() {
   let y = ((2 * x) - 2);
   alert(`The slope is  ${y}/${x}`)
 }
-//console.log(slopeCalculate())
+slopeCalculate()
 
 //6.Slope is (m = y2-y1/x2-x1). Find the slope between point (2, 2) and point(6,10)
 function calcSlope(coordinates) {
   const { x1, x2, y1, y2 } = coordinates;
   return (y2 - y1) / (x2 - x1);
 }
-//console.log(calcSlope({x1: 2, y1: 2, x2: 6, y2: 10}))
+calcSlope({x1: 2, y1: 2, x2: 6, y2: 10})
 
 //7.Compare the slope of above two questions.
-//console.log(slopeCalculate >= calcSlope)
-
-
+const compareSlope = slopeCalculate >= calcSlope
 
 //8. Calculate the value of y (y = x^2 + 6x + 9). Try to use different x values and figure out at what x value y is 0
 function calculateY() {
   const range = [-8, -7, -6, -5, -6, -5, -4, -3, -2, -1, 0];
   return range.map(x => Math.pow(x, 2) + 6 * x + 9)
 }
-console.log(calculateY())
+calculateY()
 
 //9. Write a script that prompt a user to enter hours and rate per hour. Calculate pay of the person?
 function pay() {
@@ -170,18 +168,18 @@ function pay() {
   const payment = (hours * rate);
   alert(`Your weekly earning is ${payment}`)
 }
-//console.log(pay())
+pay()
 
 //10.If the length of your name is greater than 7 say, your name is long else say your name is short.
 function sizeLength() {
   const name = prompt('Insert your name here');
   if (name.length > 7) {
-    alert(`Your name is long`);
+    alert('Your name is long');
   } else {
-    alert(`Your name is short`);
+    alert('Your name is short');
   }
 }
-//console.log(sizeLength())
+sizeLength()
 
 //11. Compare your first name length and your family name length and you should get this output.
 function compareLength() {
@@ -193,7 +191,7 @@ function compareLength() {
     alert(`Your family name, ${familyName} is longer than your firs name, ${yourName}`);
   }
 }
-//console.log(compareLength())
+compareLength()
 
 //12. Declare two variables myAge and yourAge and assign them initial values and myAge and yourAge.
 function compareAges() {
@@ -203,7 +201,7 @@ function compareAges() {
     alert(`I am ${myAge - yourAge} years older than you.`);
   }
 }
-//console.log(compareAges())
+compareAges()
 
 /*13.Using prompt get the year the user was born and if the user is 18 or above allow
 the user to drive if not tell the user to wait a certain amount of years.*/
@@ -219,7 +217,7 @@ function driveAge() {
     alert(`You are ${age} old enough to drive`);
   }
 }
-//console.log(driveAge())
+driveAge()
 
 /*14.Write a script that prompt the user to enter number of years. Calculate the number 
 of seconds a person can live. Assume some one lives just hundred years*/
@@ -229,30 +227,32 @@ function secondsLive() {
   const calculate = age * seccondsYear;
   alert(`You lived ${calculate} seconds.`);
 }
-//console.log(secondsLive())
+secondsLive()
 
 //15. Create a human readable time format using the Date time object
 //. i 
-const todayYear = now.getFullYear()
-const month = now.getMonth() + 1
-const day = now.getDay()
-const hours = now.getHours()
-const minutes = now.getMinutes()
-console.log(`${todayYear}-${month}-${day} ${hours}:${minutes}`)
+const todayYear = now.getFullYear();
+const month = now.getMonth() + 1;
+const day = now.getDay();
+const hours = now.getHours();
+const minutes = now.getMinutes();
+console.log(`${todayYear}-${month}-${day} ${hours}:${minutes}`);
 //ii. 
-console.log(`${day}-${month}-${todayYear} ${hours}:${minutes}`)
+console.log(`${day}-${month}-${todayYear} ${hours}:${minutes}`);
 //iii.
-console.log(`${day}/${month}/${todayYear} ${hours}:${minutes}`)
+console.log(`${day}/${month}/${todayYear} ${hours}:${minutes}`);
 
-const dateYear = now.getFullYear()
-const dateMonth = now.getMonth() + 1
-const dateDay = now.getDay()
+const dateYear = now.getFullYear();
+const dateMonth = now.getMonth() + 1;
+const dateDay = now.getDay();
 
-function twoDigitsHour() {
+//LEVEL 3
+/*Create a human readable time format using the Date time object. The hour and the minute should
+ be all the time two digits(7 hours should be 07 and 5 minutes should be 05 ) */
+ function twoDigitsHour() {
   const formatTwoDigits = (numberToFormat) => numberToFormat < 10 ? `0${numberToFormat}` : String(numberToFormat)
-  const dateHours = now.getHours();
-  const dateMinutes = now.getMinutes();
-  formatTwoDigits(dateHours);
-  formatTwoDigits(dateMinutes);
+  const hours = now.getHours() ;
+  const minutes = now.getMinutes();
+  return `${formatTwoDigits(hours)} : ${formatTwoDigits(minutes)}`
 }
-console.log(`${dateYear}-${dateMonth}-${dateDay}` + " " + twoDigitsHour() + ":" + twoDigitsHour())
+console.log(`${dateYear}-${dateMonth}-${dateDay}` + twoDigitsHour() + twoDigitsHour())
