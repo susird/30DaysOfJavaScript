@@ -138,8 +138,8 @@ circleArea()
 
 //5.Calculate the slope, x-intercept and y-intercept of y = 2x -2
 function slopeCalculate() {
-  let x = prompt('Insert the intercept here');
-  let y = ((2 * x) - 2);
+  const x = prompt('Insert the intercept here');
+  const y = ((2 * x) - 2);
   alert(`The slope is  ${y}/${x}`)
 }
 slopeCalculate()
