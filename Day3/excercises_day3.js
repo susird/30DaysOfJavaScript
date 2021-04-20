@@ -253,6 +253,6 @@ const dateDay = now.getDay();
   const formatTwoDigits = (numberToFormat) => numberToFormat < 10 ? `0${numberToFormat}` : String(numberToFormat)
   const hours = now.getHours() ;
   const minutes = now.getMinutes();
-  return `${formatTwoDigits(hours)} : ${formatTwoDigits(minutes)}`
+  return ` ${formatTwoDigits(hours)}:${formatTwoDigits(minutes)}`
 }
-console.log(`${dateYear}-${dateMonth}-${dateDay}` + twoDigitsHour() + twoDigitsHour())
+console.log(`${dateYear}-${dateMonth}-${dateDay}` + twoDigitsHour())
