@@ -87,41 +87,18 @@ December, January or February, the season is Winter.
 March, April or May, the season is Spring
 June, July or August, the season is Summer   */
 
-const monthSeason = prompt('Enter the month:')
+const monthSeason = prompt('Enter the month:').toLocaleLowerCase()
 
-switch (true) {
-  case monthSeason === 'September':
-  case monthSeason === '9':
-  case monthSeason === 'October':
-  case monthSeason === '10':
-  case monthSeason === 'November':
-  case monthSeason === '11':
-    alert(`The season is Autumn`);
-    break;
-  case monthSeason === 'December':
-  case monthSeason === '12':
-  case monthSeason === 'January':
-  case monthSeason === '1':
-  case monthSeason === 'February':
-  case monthSeason === '2':
-    alert(`The season is Winter`);
-    break;
-  case monthSeason === 'March':
-  case monthSeason === '3':
-  case monthSeason === 'April':
-  case monthSeason === '4':
-  case monthSeason === 'May':
-  case monthSeason === '5':
-    alert(`The season is Spring`);
-    break;
-  case monthSeason === 'June':
-  case monthSeason === '6':
-  case monthSeason === 'July':
-  case monthSeason === '7':
-  case monthSeason === 'August':
-  case monthSeason === '8':
-    alert(`The season is Summer`);
-    break;
+if (monthSeason === 'september' || monthSeason === 'october' || monthSeason === 'november') {
+  alert('The season is Autumn');
+} else if (monthSeason === 'december' || monthSeason === 'january' || monthSeason === 'february') {
+  alert('The season is Winter');
+} else if (monthSeason === 'march' || monthSeason === 'april' || monthSeason === 'may') {
+  lert('he season is Spring');
+} else if (monthSeason === 'june' || monthSeason === 'july' || monthSeason === 'august') {
+  alert('The season is Summer');
+} else {
+  alert(`${monthSeason} is not a season`);
 }
 
 //3.Check if a day is weekend day or a working day. Your script will take day as an input.
@@ -152,22 +129,17 @@ if (month === 'november' || month === 'april' || month === 'june' || month === '
 const monthOfYear = prompt('Enter the month:').toLowerCase();
 const year = Number(prompt('Enter the year:'));
 const isLeapYear = (year % 4 === 0) && (year % 400 === 0 || year % 100 !== 0)
-switch (true) {
-  case monthOfYear === 'november':
-  case monthOfYear === 'april':
-  case monthOfYear === 'june':
-  case monthOfYear === 'september':
-    alert(`${monthOfYear} has 30 days `);
-    break;
-  case monthOfYear === 'february':
-    if (isLeapYear) {
+
+if (monthOfYear === 'november' || monthOfYear === 'april' || monthOfYear === 'june' || monthOfYear === 'september') {
+  alert(`${monthOfYear} has 30 days `); 
+} else if (monthOfYear === 'february') {
+  if (isLeapYear) {
       alert(`${monthOfYear} has 29 days `);
     } else {
       alert(`${monthOfYear} has 28 days `);
     }
-    break;
-  default:
-    alert(`${monthOfYear} has 31 days `);
+} else {
+  alert(`${monthOfYear} has 31 days `);
 }
 
 
