@@ -39,7 +39,7 @@ function greaterThan() {
   }
 }
 console.log(greaterThan())
-
+0
 // second way
 const c = prompt('Enter number c')
 const d = prompt('Enter number d')
@@ -66,23 +66,19 @@ console.log(EvenNumber())
 60-69, C
 50-59, D
 0-49, F */
-
 const grades = prompt('Enter your score:');
-switch (true) {
-  case grades <= 49:
-    //alert(`Your grade is F'`);
-    break;
-  case grades <= 59:
-    alert(`Your grade is D'`);
-    break;
-  case grades <= 69:
-    alert(`Your grade is C'`);
-    break;
-  case grades <= 89:
-    alert(`Your grade is B'`);
-    break;
-  default:
-    alert(`Your grade is A'`);
+if (grades <= 49) {
+  alert('Your grade is F');
+} else if (grades <= 59){
+  alert('Your grade is D');
+} else if (grades <= 69) {
+  alert('Your grade is C');
+} else if (grades <= 89 ) {
+  alert('Your grade is B');
+} else if (grades <= 100) {
+  alert('Your grade is A');
+} else {
+  alert('You don\'t have a grade');
 }
 
 /*2. Check if the season is Autumn, Winter, Spring or Summer. If the user input is :
@@ -92,6 +88,7 @@ March, April or May, the season is Spring
 June, July or August, the season is Summer   */
 
 const monthSeason = prompt('Enter the month:')
+
 switch (true) {
   case monthSeason === 'September':
   case monthSeason === '9':
@@ -142,18 +139,13 @@ typeOfDay()
 
 //LEVEL 3
 //1. Write a program which tells the number of days in a month.
-const month = prompt('Enter the month:')
-switch (true) {
-  case month === 'november':
-  case month === 'april':
-  case month === 'june':
-  case month === 'september':
-    alert(`${month} has 30 days `);
-    break;
-  case month === 'february':
-    break;
-  default:
-    alert(`${month} has 31 days `);
+const month = prompt('Enter the month:').toLocaleLowerCase()
+if (month === 'november' || month === 'april' || month === 'june' || month === 'september') {
+  alert(`${month} has 30 days`);
+} else if (month === 'february') {
+  alert(`${month} has 28 days `);
+} else {
+  alert(`${month} has 31 days `);
 }
 
 // 2. Write a program which tells the number of days in a month, now consider leap year.
