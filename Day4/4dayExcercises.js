@@ -8,7 +8,7 @@ function ageUser() {
   if (oldUser >= ofAge) {
     alert('You are old enough to drive.');
   } else {
-    alert('You are left with ${underAge} years to drive.')
+    alert(`You are left with ${underAge} years to drive.`)
   }
 }
 console.log(ageUser())
@@ -39,7 +39,7 @@ function greaterThan() {
   }
 }
 console.log(greaterThan())
-0
+
 // second way
 const c = prompt('Enter number c')
 const d = prompt('Enter number d')
@@ -120,8 +120,8 @@ typeOfDay()
 //LEVEL 3
 //1. Write a program which tells the number of days in a month.
 const month = prompt('Enter the month:').toLocaleLowerCase()
-const daysInAMonth = month === 'november' || month === 'april' || month === 'june' || month === 'september';
-if (daysInAMonth) {
+const hasThirtyDays = month === 'november' || month === 'april' || month === 'june' || month === 'september';
+if (hasThirtyDays) {
   alert(`${month} has 30 days`);
 } else if (month === 'february') {
   alert(`${month} has 28 days `);
@@ -133,8 +133,8 @@ if (daysInAMonth) {
 const monthOfYear = prompt('Enter the month:').toLowerCase();
 const year = Number(prompt('Enter the year:'));
 const isLeapYear = (year % 4 === 0) && (year % 400 === 0 || year % 100 !== 0)
-const month = monthOfYear === 'november' || monthOfYear === 'april' || monthOfYear === 'june' || monthOfYear === 'september';
-if (month) {
+const hasThirtyDays = monthOfYear === 'november' || monthOfYear === 'april' || monthOfYear === 'june' || monthOfYear === 'september';
+if (hasThirtyDays) {
   alert(`${monthOfYear} has 30 days `); 
 } else if (monthOfYear === 'february') {
   if (isLeapYear) {
@@ -145,7 +145,3 @@ if (month) {
 } else {
   alert(`${monthOfYear} has 31 days `);
 }
-
-
-
-
