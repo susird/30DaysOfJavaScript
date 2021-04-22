@@ -6,9 +6,9 @@ function ageUser() {
   const ofAge = 18;
   const underAge = (18 - oldUser);
   if (oldUser >= ofAge) {
-    alert(`You are old enough to drive.`);
+    alert('You are old enough to drive.');
   } else {
-    alert(`You are left with ${underAge} years to drive.`)
+    alert('You are left with ${underAge} years to drive.')
   }
 }
 console.log(ageUser())
@@ -50,7 +50,8 @@ console.log(compare)
 //4. Even numbers are divisible by 2 and the remainder is zero. How do you check, if a number is even or not using JavaScript?
 function EvenNumber() {
   const number = prompt('Enter a number:');
-  if (number % 2 == 0) {
+  const isEven = number % 2 == 0
+  if (isEven) {
     return alert(`${number} is an even number`);
   } else {
     return alert(`${number} is an odd number.`)
@@ -88,14 +89,17 @@ March, April or May, the season is Spring
 June, July or August, the season is Summer   */
 
 const monthSeason = prompt('Enter the month:').toLocaleLowerCase()
-
-if (monthSeason === 'september' || monthSeason === 'october' || monthSeason === 'november') {
+const isAtum = monthSeason === 'september' || monthSeason === 'october' || monthSeason === 'november';
+const isWinter = monthSeason === 'december' || monthSeason === 'january' || monthSeason === 'february';
+const isSpring = monthSeason === 'march' || monthSeason === 'april' || monthSeason === 'may';
+const isSummer = monthSeason === 'june' || monthSeason === 'july' || monthSeason === 'august';
+if (isAtum) {
   alert('The season is Autumn');
-} else if (monthSeason === 'december' || monthSeason === 'january' || monthSeason === 'february') {
+} else if (isWinter) {
   alert('The season is Winter');
-} else if (monthSeason === 'march' || monthSeason === 'april' || monthSeason === 'may') {
+} else if (isSpring) {
   lert('he season is Spring');
-} else if (monthSeason === 'june' || monthSeason === 'july' || monthSeason === 'august') {
+} else if (isSummer) {
   alert('The season is Summer');
 } else {
   alert(`${monthSeason} is not a season`);
@@ -104,8 +108,7 @@ if (monthSeason === 'september' || monthSeason === 'october' || monthSeason === 
 //3.Check if a day is weekend day or a working day. Your script will take day as an input.
 function typeOfDay() {
   const day = prompt('What is the day today?').toLowerCase();
-  const isWeekend = day === 'sunday' || day === 'saturday'
-  console.log(isWeekend)
+  const isWeekend = day === 'sunday' || day === 'saturday';
   if (isWeekend) {
     alert(`${day} is a weekend`);
   } else {
@@ -117,7 +120,8 @@ typeOfDay()
 //LEVEL 3
 //1. Write a program which tells the number of days in a month.
 const month = prompt('Enter the month:').toLocaleLowerCase()
-if (month === 'november' || month === 'april' || month === 'june' || month === 'september') {
+const daysInAMonth = month === 'november' || month === 'april' || month === 'june' || month === 'september';
+if (daysInAMonth) {
   alert(`${month} has 30 days`);
 } else if (month === 'february') {
   alert(`${month} has 28 days `);
@@ -129,8 +133,8 @@ if (month === 'november' || month === 'april' || month === 'june' || month === '
 const monthOfYear = prompt('Enter the month:').toLowerCase();
 const year = Number(prompt('Enter the year:'));
 const isLeapYear = (year % 4 === 0) && (year % 400 === 0 || year % 100 !== 0)
-
-if (monthOfYear === 'november' || monthOfYear === 'april' || monthOfYear === 'june' || monthOfYear === 'september') {
+const month = monthOfYear === 'november' || monthOfYear === 'april' || monthOfYear === 'june' || monthOfYear === 'september';
+if (month) {
   alert(`${monthOfYear} has 30 days `); 
 } else if (monthOfYear === 'february') {
   if (isLeapYear) {
