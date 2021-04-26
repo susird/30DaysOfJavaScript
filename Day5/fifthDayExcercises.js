@@ -26,7 +26,7 @@ console.log(mixedDataTypes.length);
 /*6.Declare an array variable name itCompanies and assign initial values Facebook, Google, 
 Microsoft, Apple, IBM, Oracle and Amazon */
 
-const itCompanies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon'];
+let itCompanies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon'];
 
 //7.Print the array using console.log()
 console.log(itCompanies);
@@ -41,3 +41,24 @@ console.log(middleCompany)
 let lastCompany = itCompanies.length -1;
 lastCompany = itCompanies[lastCompany];
 console.log(lastCompany)
+
+//10.Print out each company
+itCompanies.forEach(element => console.log(element))
+
+//11. Change each company name to uppercase one by one and print them out
+itCompanies.map(function(x) {return console.log(x.toUpperCase());})
+
+//12.Print the array like as a sentence: Facebook, Google, Microsoft, Apple, IBM,Oracle and Amazon are big IT companies. 
+console.log(itCompanies.toString() + ' are big IT companies')
+
+/*13. Check if a certain company exists in the itCompanies array. 
+If it exist return the company else return a company is not found*/
+const IT_EXIST = 0;
+const companyExist = itCompanies.indexOf('Facebook')
+if ( companyExist === IT_EXIST) {
+  console.log('This company does exist')
+} else {
+  console.log('Company is not found')
+}
+
+//14. Filter out companies which have more than one 'o' without the filter method
