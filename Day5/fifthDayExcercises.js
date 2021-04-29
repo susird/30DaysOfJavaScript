@@ -62,6 +62,10 @@ if ( companyExist === IT_EXIST) {
 }
 
 //14. Filter out companies which have more than one 'o' without the filter method
+let aCountArr = itCompanies.map(i => {
+  return i.match(/o/g).length;
+});
+console.log(aCountArr);
 
 //15. Sort the array using sort() method
 console.log(itCompanies.sort())
@@ -79,6 +83,18 @@ console.log(itCompanies.slice(4))
 console.log(itCompanies.slice(3,4))
 
 //20.Remove the first IT company from the array
-console.log(itCompanies.splice(0,1))
+const facebookleIndex = itCompanies.indexOf('Facebook');
+console.log(itCompanies.splice(facebookleIndex, 1));
 
 //21.Remove the middle IT company or companies from the array
+const appleIndex = itCompanies.indexOf('Apple');
+console.log(itCompanies.splice(appleIndex, 1));
+
+//22.Remove the last IT company from the array
+const amazonIndex = itCompanies.indexOf('Amazon');
+console.log(itCompanies.splice(amazonIndex, 1));
+
+//23.Remove all IT companies
+console.log(itCompanies.splice())
+
+//LEVEL 2
