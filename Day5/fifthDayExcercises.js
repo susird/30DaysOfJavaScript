@@ -12,7 +12,7 @@ const countries = require("./countries.js");
 // //3.Find the length of your array
 // console.log(numbersList.length);
 
-// //4. Get the first item, the middle item and the last item of the array
+//4. Get the first item, the middle item and the last item of the array
 // const FIRST = 0
 // console.log(numbersList[FIRST]);
 // let lastNumber = numbersList.length - 1;
@@ -165,6 +165,20 @@ CSS preprocess'. If it does not exist add Sass to the array and print the array.
 
 //LEVEL 3
 //1. The following is an array of 10 students ages:
+//   // Sort the array and find the min and max age
+// console.log(sortedArry)
+// const FIRST = 0;
+// console.log(sortedArry[FIRST]);
+// let maxAge = sortedArry.length - 1;
+// maxAge = sortedArry[maxAge];
+// console.log(maxAge);
+//Find the median age(one middle item or two middle items divided by two)
 const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
-  // Sort the array and find the min and max age
-  
+const sortedArray = ages.sort((a,b) => a-b);
+const half = (sortedArray.length / 2)
+const middleAge = sortedArray.splice(0,half)
+const secondHalf = sortedArray.splice(-half)
+//const middleAgeTwo = sortedArray[Math.floor((sortedArray.length - 1) / 2)];
+console.log (half)
+
+
