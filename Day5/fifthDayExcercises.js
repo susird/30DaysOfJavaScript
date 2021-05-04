@@ -172,13 +172,16 @@ CSS preprocess'. If it does not exist add Sass to the array and print the array.
 // let maxAge = sortedArry.length - 1;
 // maxAge = sortedArry[maxAge];
 // console.log(maxAge);
-//Find the median age(one middle item or two middle items divided by two)
-const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
-const sortedArray = ages.sort((a,b) => a-b);
-const half = (sortedArray.length / 2)
-const middleAge = sortedArray.splice(0,half)
-const secondHalf = sortedArray.splice(-half)
-//const middleAgeTwo = sortedArray[Math.floor((sortedArray.length - 1) / 2)];
-console.log (half)
-
-
+  //Find the median age(one middle item or two middle items divided by two)
+// const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
+// const sortedArray = ages.sort((a,b) => a-b);
+// const FIRST = 0
+// console.log(sortedArray)
+// const half = sortedArray.length / 2
+// const firstHalf = sortedArray.splice(0,half)
+// const secondHalf = sortedArray.splice(-half)
+// const lastIndexFirstHalf = firstHalf[firstHalf.length -1];
+// const firstIndexSecondHalf = secondHalf[FIRST]
+// const medianAge = (lastIndexFirstHalf + firstIndexSecondHalf) / 2
+// console.log(medianAge)
+  //Find the average age(all items divided by number of items)
