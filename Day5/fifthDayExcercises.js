@@ -165,16 +165,17 @@ CSS preprocess'. If it does not exist add Sass to the array and print the array.
 
 //LEVEL 3
 //1. The following is an array of 10 students ages:
+const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
 //   // Sort the array and find the min and max age
+const sortedArray = ages.sort((a,b) => a-b);
 // console.log(sortedArry)
-// const FIRST = 0;
-// console.log(sortedArry[FIRST]);
-// let maxAge = sortedArry.length - 1;
-// maxAge = sortedArry[maxAge];
+const FIRST = 0;
+const minAge =sortedArray[FIRST]
+ let maxAge = sortedArray.length - 1
+ maxAge = sortedArray[maxAge];
 // console.log(maxAge);
+
   //Find the median age(one middle item or two middle items divided by two)
-// const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
-// const sortedArray = ages.sort((a,b) => a-b);
 // const FIRST = 0
 // console.log(sortedArray)
 // const half = sortedArray.length / 2
@@ -184,4 +185,13 @@ CSS preprocess'. If it does not exist add Sass to the array and print the array.
 // const firstIndexSecondHalf = secondHalf[FIRST]
 // const medianAge = (lastIndexFirstHalf + firstIndexSecondHalf) / 2
 // console.log(medianAge)
+
   //Find the average age(all items divided by number of items)
+// const reducer = (accumulator, currentValue) => accumulator + currentValue;
+// const average = ages.reduce(reducer) / ages.length
+// const roundAverage = Math.ceil(average)
+// console.log(roundAverage)
+
+  //Find the range of the ages(max minus min)
+const rangeAges = maxAge - minAge
+console.log(rangeAges)
