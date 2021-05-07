@@ -164,42 +164,48 @@ const fullStack = frontEnd.concat(backEnd)
 console.log(fullStack)
 
 //LEVEL 3
-//1. The following is an array of 10 students ages:
 const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
-  // Sort the array and find the min and max age
-const sortedArray = ages.sort((a,b) => a-b);
- console.log(sortedArry)
-const minAge =sortedArray[FIRST]
- let maxAge = sortedArray.length - 1
- maxAge = sortedArray[maxAge];
-console.log(maxAge);
-
-  //Find the median age(one middle item or two middle items divided by two)
+//1. The following is an array of 10 students ages:
+//Sort the array and find the min and max age
+const sortedArray = ages.sort((a, b) => a - b);
 console.log(sortedArray)
-const half = sortedArray.length / 2
-const firstHalf = sortedArray.splice(0,half)
-const secondHalf = sortedArray.splice(-half)
-const lastIndexFirstHalf = firstHalf[firstHalf.length -1];
-const firstIndexSecondHalf = secondHalf[FIRST]
-const medianAge = (lastIndexFirstHalf + firstIndexSecondHalf) / 2
-console.log(medianAge)
+const minAge = sortedArray[FIRST]
+let maxAge = sortedArray.length - 1
+maxAge = sortedArray[maxAge];
+// console.log(maxAge);
 
-  //Find the average age(all items divided by number of items)
+//Find the median age(one middle item or two middle items divided by two)
+// console.log(sortedArray)
+// const half = sortedArray.length / 2
+// const firstHalf = sortedArray.splice(0, half)
+// const secondHalf = sortedArray.splice(-half)
+// const lastIndexFirstHalf = firstHalf[firstHalf.length - 1];
+// const firstIndexSecondHalf = secondHalf[FIRST]
+// const medianAge = (lastIndexFirstHalf + firstIndexSecondHalf) / 2
+// console.log(medianAge)
+
+//Find the average age(all items divided by number of items)
+//const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
 const reducer = (accumulator, currentValue) => accumulator + currentValue;
 const average = ages.reduce(reducer) / ages.length
+console.log(average)
 const roundAverage = Math.ceil(average)
 console.log(roundAverage)
 
-  //Find the range of the ages(max minus min)
+//Find the range of the ages(max minus min)
 const rangeAges = maxAge - minAge
 console.log(rangeAges)
 
   //Compare the value of (min - average) and (max - average), use abs() method
 const maxLessAverage = maxAge - roundAverage
 console.log(maxLessAverage)
+const minLessAverage = minAge - roundAverage
+console.log(minLessAverage)
+const comparition = Math.abs(maxLessAverage === minLessAverage)
+console.log(comparition)
 
 //2.Slice the first ten countries from the countries array
-console.log(countries.slice(0,10))
+console.log(countries.slice(0, 10))
 
 //3.Find the middle country(ies) in the countries array
 const middleCountry = countries[Math.floor(countries.length / 2)];
@@ -208,7 +214,7 @@ console.log(middleCountry)
 /*Divide the countries array into two equal arrays if it is even. If countries array is not even , 
 one more country for the first half.*/
 const halfCountries = countries.length / 2
-const firstHalfCountries= countries.splice(0,halfCountries)
+const firstHalfCountries = countries.splice(0, halfCountries)
 console.log(firstHalfCountries)
 const secondHalfCountries = countries.splice(-halfCountries)
 console.log(secondHalfCountries)
