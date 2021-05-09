@@ -24,7 +24,8 @@ console.log(middleNumber);
 /*5. Declare an array called mixedDataTypes, put different data types in the array and find the 
 length of the array. The array size should be greater than 5 */
 const mixedDataTypes = ['Luna', 1995, true, [1, 2, 3], '1000', 55];
-console.log(mixedDataTypes.length);
+const lengthArray = mixedDataTypes.length;
+console.log(lengthArray);
 
 // /*6.Declare an array variable name itCompanies and assign initial values Facebook, Google, 
 // Microsoft, Apple, IBM, Oracle and Amazon */
@@ -35,13 +36,14 @@ const itCompanies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle'
 console.log(itCompanies);
 
 //8. Print the number of companies in the array
-console.log(itCompanies.length);
+const numberCompanies = itCompanies.length
+console.log(numberCompanies);
 
 //9.Print the first company, middle and last company
 console.log(itCompanies[FIRST]);
 const middleCompany = itCompanies[Math.floor(itCompanies.length / 2)];
 console.log(middleCompany);
-let lastCompany = itCompanies.length - 1;
+const lastCompany = itCompanies.length - 1;
 lastCompany = itCompanies[lastCompany];
 console.log(lastCompany);
 
@@ -49,10 +51,11 @@ console.log(lastCompany);
 itCompanies.forEach(element => console.log(element));
 
 //11. Change each company name to uppercase one by one and print them out
-itCompanies.map(function (x) { return console.log(x.toUpperCase())});
+itCompanies.map(function (x) { return console.log(x.toUpperCase()) });
 
 //12.Print the array like as a sentence: Facebook, Google, Microsoft, Apple, IBM,Oracle and Amazon are big IT companies. 
-console.log(itCompanies.toString() + ' are big IT companies');
+const arraySentence = itCompanies.toString() + ' are big IT companies';
+console.log(arraySentence);
 
 /*13. Check if a certain company exists in the itCompanies array. 
 If it exist return the company else return a company is not found*/
@@ -76,31 +79,39 @@ itCompanies.forEach(element => {
 console.log(itCompanies.sort());
 
 //16. Reverse the array using reverse() method
-console.log(itCompanies.reverse());
+const reversCompanies = itCompanies.reverse();
+console.log(reversCompanies);
 
 //17. Slice out the first 3 companies from the array
-console.log(itCompanies.slice(0, 3));
+const sliceFirstCompanies =itCompanies.slice(0, 3)
+console.log(sliceFirstCompanies);
 
 //18. Slice out the last 3 companies from the array
-console.log(itCompanies.slice(4));
+const sliceLastCompanies = itCompanies.slice(4)
+console.log(sliceLastCompanies);
 
 //19. Slice out the middle IT company or companies from the array
-console.log(itCompanies.slice(3, 4));
+const slicedMiddleCompanies = itCompanies.slice(3, 4) 
+console.log(slicedMiddleCompanies);
 
 //20.Remove the first IT company from the array
 const facebookleIndex = itCompanies.indexOf('Facebook');
-console.log(itCompanies.splice(facebookleIndex, 1));
+const removeFirtsIt = itCompanies.splice(facebookleIndex, 1);
+console.log(removeFirtsIt);
 
 //21.Remove the middle IT company or companies from the array
 const appleIndex = itCompanies.indexOf('Apple');
-console.log(itCompanies.splice(appleIndex, 1));
+const removeMiddleIt = itCompanies.splice(appleIndex, 1);
+console.log(removeMiddleIt);
 
 //22.Remove the last IT company from the array
 const amazonIndex = itCompanies.indexOf('Amazon');
-console.log(itCompanies.splice(amazonIndex, 1));
+const removeLastIt = itCompanies.splice(amazonIndex, 1);
+console.log(removeLastIt);
 
 //23.Remove all IT companies
-console.log(itCompanies.splice());
+const removeAllIt = itCompanies.splice();
+console.log(removeAllIt);
 
 //LEVEL 2
 /*1.Create a separate countries.js file and store the countries array in to this file,
@@ -113,7 +124,8 @@ console.log(webTechs);
 const text = 'I love teaching and empowering people. I teach HTML, CSS, JS, React, Python.';
 const words = text.replace(/[.,]/g, "").split(' ');
 console.log(words);
-console.log(words.length);
+const countWordsText = words.length
+console.log(countWordsText);
 
 //3.In the following shopping cart add, remove, edit items
 let shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey'];
@@ -133,29 +145,29 @@ console.log(shoppingCart);
 /*4. In countries array check if 'Ethiopia' exists in the array if it exists print 
 'ETHIOPIA'. If it does not exist add to the countries list.*/
 
-function findingCountry(countries = [], country = '') {
-  const hasEthiopia = countries.indexOf(country) !== -1;
-  if (hasEthiopia)  {
+function findCountry(countries = [], country = '') {
+  const hasCountry = countries.indexOf(country) !== -1;
+  if (hasCountry) {
     console.log(country);
   } else {
-    const mergedArrays = countries.concat([country]);
-    console.log(mergedArrays); 
+    const mergeArrays = countries.concat([country]);
+    console.log(mergeArrays);
   }
 }
-findingCountry(countries, 'Ethiopia');
+findCountry(countries, 'Ethiopia');
 
 /*5.In the webTechs array check if Sass exists in the array and if it exists print 'Sass is a
 CSS preprocess'. If it does not exist add Sass to the array and print the array.*/
-function findingWebTech(webTech, tech) {
+function findgWebTech(webTech, tech) {
   const hasTech = webTech.indexOf(tech) !== -1;
   if (hasTech) {
     console.log(`${tech} is a CSS preprocess`);
-  }else {
-    const mergedTech = webTechs.concat([tech]);
-    console.log(mergedTech);
+  } else {
+    const mergeTech = webTechs.concat([tech]);
+    console.log(mergeTech);
   }
 }
-findingWebTech(webTechs, 'Sass');
+findgWebTech(webTechs, 'Sass');
 
 //6.Concatenate the following two variables and store it in a fullStack variable.
 const frontEnd = ['HTML', 'CSS', 'JS', 'React', 'Redux'];
@@ -167,18 +179,18 @@ console.log(fullStack);
 const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24];
 //1. The following is an array of 10 students ages:
 //Sort the array and find the min and max age
-const sortedAges = ages.sort((a, b) => a - b);
-console.log(sortedAges);
-const minAge = sortedAges[FIRST];
-let maxAge = sortedAges.length - 1;
-maxAge = sortedAges[maxAge];
+const sortAges = ages.sort((a, b) => a - b);
+console.log(sortAges);
+const minAge = sortAges[FIRST];
+let maxAge = sortAges.length - 1;
+maxAge = sortAges[maxAge];
 console.log(maxAge);
 
 //Find the median age(one middle item or two middle items divided by two)
-console.log(sortedAges);
-const halfAge = sortedAges.length / 2;
-const firstHalf = sortedAges.splice(0, halfAge);
-const secondHalf = sortedAges.splice(-halfAge);
+console.log(sortAges);
+const halfAge = sortAges.length / 2;
+const firstHalf = sortAges.splice(0, halfAge);
+const secondHalf = sortAges.splice(-halfAge);
 const lastIndexFirstHalf = firstHalf[firstHalf.length - 1];
 const firstIndexSecondHalf = secondHalf[FIRST];
 const medianAge = (lastIndexFirstHalf + firstIndexSecondHalf) / 2;
@@ -186,26 +198,27 @@ console.log(medianAge);
 
 //Find the average age(all items divided by number of items)
 //const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
-const reducer = (accumulator, currentValue) => accumulator + currentValue;
-const average = ages.reduce(reducer) / ages.length;
-console.log(average);
-const roundAverage = Math.ceil(average);
+const reduceAgesArray = (accumulator, currentValue) => accumulator + currentValue;
+const averageAge = ages.reduce(reduceAgesArray) / ages.length;
+console.log(averageAge);
+const roundAverage = Math.ceil(averageAge);
 console.log(roundAverage);
 
 //Find the range of the ages(max minus min)
 const rangeAges = maxAge - minAge;
 console.log(rangeAges);
 
-  //Compare the value of (min - average) and (max - average), use abs() method
-const maxLessAverage = maxAge - roundAverage;
+//Compare the value of (min - average) and (max - average), use abs() method
+const maxLessAverage = Math.abs(maxAge - roundAverage);
 console.log(maxLessAverage);
-const minLessAverage = minAge - roundAverage;
+const minLessAverage = Math.abs(minAge - roundAverage);
 console.log(minLessAverage);
-const comparition = Math.abs(maxLessAverage === minLessAverage);
+const comparition = maxLessAverage === minLessAverage;
 console.log(comparition);
 
 //2.Slice the first ten countries from the countries array
-console.log(countries.slice(0, 10));
+const sliceCountries = countries.slice(0, 10)
+console.log(sliceCountries);
 
 //3.Find the middle country(ies) in the countries array
 const middleCountry = countries[Math.floor(countries.length / 2)];
