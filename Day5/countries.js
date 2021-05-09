@@ -11,5 +11,5 @@ const countries = [
   'Japan',
   'Kenya'
 ]
-module.exports = countries
+module.exports = countries;
  

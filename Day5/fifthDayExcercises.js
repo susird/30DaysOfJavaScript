@@ -29,7 +29,7 @@ console.log(mixedDataTypes.length);
 // /*6.Declare an array variable name itCompanies and assign initial values Facebook, Google, 
 // Microsoft, Apple, IBM, Oracle and Amazon */
 
-let itCompanies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon'];
+const itCompanies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon'];
 
 //7.Print the array using console.log()
 console.log(itCompanies);
@@ -111,7 +111,7 @@ console.log(webTechs);
 
 //2. First remove all the punctuations and change the string to array and count the number of words in the array
 const text = 'I love teaching and empowering people. I teach HTML, CSS, JS, React, Python.';
-let words = text.replace(/[.,]/g, "").split(' ');
+const words = text.replace(/[.,]/g, "").split(' ');
 console.log(words);
 console.log(words.length);
 
@@ -134,8 +134,8 @@ console.log(shoppingCart);
 'ETHIOPIA'. If it does not exist add to the countries list.*/
 
 function findingCountry(countries = [], country = '') {
-  const isEthiopia = countries.indexOf(country) !== -1;
-  if (isEthiopia)  {
+  const hasEthiopia = countries.indexOf(country) !== -1;
+  if (hasEthiopia)  {
     console.log(country);
   } else {
     const mergedArrays = countries.concat([country]);
@@ -147,8 +147,8 @@ findingCountry(countries, 'Ethiopia');
 /*5.In the webTechs array check if Sass exists in the array and if it exists print 'Sass is a
 CSS preprocess'. If it does not exist add Sass to the array and print the array.*/
 function findingWebTech(webTech, tech) {
-  const hasSass = webTech.indexOf(tech) !== -1;
-  if (hasSass) {
+  const hasTech = webTech.indexOf(tech) !== -1;
+  if (hasTech) {
     console.log(`${tech} is a CSS preprocess`);
   }else {
     const mergedTech = webTechs.concat([tech]);
@@ -167,18 +167,18 @@ console.log(fullStack);
 const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24];
 //1. The following is an array of 10 students ages:
 //Sort the array and find the min and max age
-const sortedArray = ages.sort((a, b) => a - b);
-console.log(sortedArray);
-const minAge = sortedArray[FIRST];
-let maxAge = sortedArray.length - 1;
-maxAge = sortedArray[maxAge];
+const sortedAges = ages.sort((a, b) => a - b);
+console.log(sortedAges);
+const minAge = sortedAges[FIRST];
+let maxAge = sortedAges.length - 1;
+maxAge = sortedAges[maxAge];
 console.log(maxAge);
 
 //Find the median age(one middle item or two middle items divided by two)
-console.log(sortedArray);
-const half = sortedArray.length / 2;
-const firstHalf = sortedArray.splice(0, half);
-const secondHalf = sortedArray.splice(-half);
+console.log(sortedAges);
+const halfAge = sortedAges.length / 2;
+const firstHalf = sortedAges.splice(0, halfAge);
+const secondHalf = sortedAges.splice(-halfAge);
 const lastIndexFirstHalf = firstHalf[firstHalf.length - 1];
 const firstIndexSecondHalf = secondHalf[FIRST];
 const medianAge = (lastIndexFirstHalf + firstIndexSecondHalf) / 2;
