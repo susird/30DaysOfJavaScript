@@ -226,8 +226,13 @@ console.log(middleCountry);
 
 /*Divide the countries array into two equal arrays if it is even. If countries array is not even , 
 one more country for the first half.*/
-const halfCountries = countries.length / 2;
-const firstHalfCountries = countries.splice(0, halfCountries);
-console.log(firstHalfCountries);
-const secondHalfCountries = countries.splice(-halfCountries);
-console.log(secondHalfCountries);
+const isOdd = (countries.length % 2) !== 0
+if (isOdd) {
+  const halfOddCountries = Math.ceil(countries.length / 2)
+  const firstOddHalfCountries = countries.splice(0, halfOddCountries);
+  const secondOddHalfCountries = countries.splice(-halfOddCountries);
+} else {
+  const halfCountries = countries.length / 2;
+  const firstHalfCountries = countries.splice(0, halfCountries);
+  const secondHalfCountries = countries.splice(-halfCountries);
+}
