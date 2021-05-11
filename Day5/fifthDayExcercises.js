@@ -213,12 +213,12 @@ const maxLessAverage = Math.abs(maxAge - roundAverage);
 console.log(maxLessAverage);
 const minLessAverage = Math.abs(minAge - roundAverage);
 console.log(minLessAverage);
-const comparition = maxLessAverage === minLessAverage;
-console.log(comparition);
+const comparision = maxLessAverage === minLessAverage;
+console.log(comparision);
 
 //2.Slice the first ten countries from the countries array
-const sliceCountries = countries.slice(0, 10)
-console.log(sliceCountries);
+const firstTenCountries = countries.slice(0, 10)
+console.log(firstTenCountries);
 
 //3.Find the middle country(ies) in the countries array
 const middleCountry = countries[Math.floor(countries.length / 2)];
