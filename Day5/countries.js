@@ -10,6 +10,7 @@ const countries = [
   'Ireland',
   'Japan',
   'Kenya'
-]
+];
+
 module.exports = countries;
  

@@ -14,12 +14,14 @@ const numbersList = [5, 4, 8, 2, 9, 3, 7];
 console.log(numbersList.length);
 
 //4. Get the first item, the middle item and the last item of the array
-console.log(numbersList[FIRST]);
-let lastNumber = numbersList.length - 1;
-lastNumber = numbersList[lastNumber];
-console.log(lastNumber)
-const middleNumber = numbersList[Math.floor(numbersList.length / 2)];
-console.log(middleNumber);
+const firstArrayItem = numbersList[FIRST];
+console.log(firstArrayItem);
+let lastPositionNumber = numbersList.length - 1;
+lastPositionNumber = numbersList[lastPositionNumber];
+console.log(lastPositionNumber)
+const calculateMiddlePositionNumber = Math.floor(numbersList.length / 2)
+const middlePositionNumber = numbersList[calculateMiddlePositionNumber];
+console.log(middlePositionNumber);
 
 /*5. Declare an array called mixedDataTypes, put different data types in the array and find the 
 length of the array. The array size should be greater than 5 */
@@ -41,20 +43,22 @@ console.log(numberCompanies);
 
 //9.Print the first company, middle and last company
 console.log(itCompanies[FIRST]);
-const middleCompany = itCompanies[Math.floor(itCompanies.length / 2)];
-console.log(middleCompany);
-const lastCompany = itCompanies.length - 1;
-lastCompany = itCompanies[lastCompany];
-console.log(lastCompany);
+const calculateMiddlePositionCompany = Math.floor(itCompanies.length / 2)
+const middlePositionCompany = itCompanies[calculateMiddlePositionCompany];
+console.log(middlePositionCompany);
+const lastPositionCompany = itCompanies.length - 1;
+lastPositionCompany = itCompanies[lastPositionCompany];
+console.log(lastPositionCompany);
 
 //10.Print out each company
 itCompanies.forEach(element => console.log(element));
 
 //11. Change each company name to uppercase one by one and print them out
-itCompanies.map(function (x) { return console.log(x.toUpperCase()) });
+itCompanies.map(company => console.log(company.toUpperCase()));
 
 //12.Print the array like as a sentence: Facebook, Google, Microsoft, Apple, IBM,Oracle and Amazon are big IT companies. 
-const arraySentence = itCompanies.toString() + ' are big IT companies';
+const convertArrayToString = itCompanies.toString()
+const arraySentence = `${convertArrayToString} are big IT companies`;
 console.log(arraySentence);
 
 /*13. Check if a certain company exists in the itCompanies array. 
@@ -83,31 +87,29 @@ const reversCompanies = itCompanies.reverse();
 console.log(reversCompanies);
 
 //17. Slice out the first 3 companies from the array
-const sliceFirstCompanies =itCompanies.slice(0, 3)
-console.log(sliceFirstCompanies);
+const sliceFirstPositionCompanies =itCompanies.slice(0, 3)
+console.log(sliceFirstPositionCompanies);
 
 //18. Slice out the last 3 companies from the array
-const sliceLastCompanies = itCompanies.slice(4)
-console.log(sliceLastCompanies);
+const sliceLastPositionCompanies = itCompanies.slice(4)
+console.log(sliceLastPositionCompanies);
 
 //19. Slice out the middle IT company or companies from the array
 const slicedMiddleCompanies = itCompanies.slice(3, 4) 
 console.log(slicedMiddleCompanies);
 
-//20.Remove the first IT company from the array
-const facebookleIndex = itCompanies.indexOf('Facebook');
-const removeFirtsIt = itCompanies.splice(facebookleIndex, 1);
-console.log(removeFirtsIt);
+const removeFirtsPositionIt = itCompanies.slice(0, 1);
+console.log(removeFirtsPositionIt);
 
 //21.Remove the middle IT company or companies from the array
-const appleIndex = itCompanies.indexOf('Apple');
-const removeMiddleIt = itCompanies.splice(appleIndex, 1);
-console.log(removeMiddleIt);
+const calculateMiddleItCompany = itCompanies.length / 2;
+const middlePositionCompany = itCompanies.slice(calculateMiddleItCompany);
+const firstPositionMiddleCompany = middlePositionCompany.slice(0,1);
+console.log(firstPositionMiddleCompany);
 
 //22.Remove the last IT company from the array
-const amazonIndex = itCompanies.indexOf('Amazon');
-const removeLastIt = itCompanies.splice(amazonIndex, 1);
-console.log(removeLastIt);
+const removeLastPositionIt = itCompanies.slice(-1);
+console.log(removeLastPositionIt);
 
 //23.Remove all IT companies
 const removeAllIt = itCompanies.splice();
@@ -189,15 +191,15 @@ console.log(maxAge);
 //Find the median age(one middle item or two middle items divided by two)
 console.log(sortAges);
 const halfAge = sortAges.length / 2;
-const firstHalf = sortAges.splice(0, halfAge);
+const firstHalfArray = sortAges.splice(0, halfAge);
 const secondHalf = sortAges.splice(-halfAge);
-const lastIndexFirstHalf = firstHalf[firstHalf.length - 1];
-const firstIndexSecondHalf = secondHalf[FIRST];
-const medianAge = (lastIndexFirstHalf + firstIndexSecondHalf) / 2;
+const lastIndexFirstHalfArray = firstHalfArray[firstHalfArray.length - 1];
+const firstIndexSecondHalfArray = secondHalf[FIRST];
+const medianAge = (lastIndexFirstHalfArray + firstIndexSecondHalfArray) / 2;
 console.log(medianAge);
 
 //Find the average age(all items divided by number of items)
-//const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
+const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
 const reduceAgesArray = (accumulator, currentValue) => accumulator + currentValue;
 const averageAge = ages.reduce(reduceAgesArray) / ages.length;
 console.log(averageAge);
@@ -221,8 +223,9 @@ const firstTenCountries = countries.slice(0, 10)
 console.log(firstTenCountries);
 
 //3.Find the middle country(ies) in the countries array
-const middleCountry = countries[Math.floor(countries.length / 2)];
-console.log(middleCountry);
+const calculateMiddleCountry = Math.floor(countries.length / 2)
+const middlePositionCountry = countries[calculateMiddleCountry];
+console.log(middlePositionCountry);
 
 /*Divide the countries array into two equal arrays if it is even. If countries array is not even , 
 one more country for the first half.*/
