@@ -63,19 +63,21 @@ console.log(arraySentence);
 
 /*13. Check if a certain company exists in the itCompanies array. 
 If it exist return the company else return a company is not found*/
-const IT_EXIST = 0;
-const companyExist = itCompanies.indexOf('Facebook');
-if (companyExist === IT_EXIST) {
-  console.log('This company does exist');
-} else {
-  console.log('Company is not found');
+function companyExistArray (company) {
+  const companyExist = itCompanies.indexOf(company) === 0;
+  if (companyExist) {
+    return 'This company does exist';
+  } else {
+    return 'Company is not found';
+  }
 }
+console.log(companyExistArray('Facebook'))
 
 //14. Filter out companies which have more than one 'o' without the filter method
 itCompanies.forEach(element => {
   const aCountArray = element.replace(/[^o]/g, "").length;
   if (aCountArray > 1) {
-    console.log(element);
+    return element;
   }
 });
 
@@ -132,11 +134,27 @@ console.log(countWordsText);
 //3.In the following shopping cart add, remove, edit items
 let shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey'];
 //add 'Meat' in the beginning of your shopping cart if it has not been already added
-shoppingCart.unshift('Meat');
-console.log(shoppingCart);
+function itemShoppingCart (item) {
+  const itemExist = shoppingCart.indexOf(item) !== 0;
+  if (itemExist) {
+     shoppingCart.unshift(item);
+     return console.log(shoppingCart)
+  } else {
+    return 'This item already exist in the shoppin cart';
+  }
+}
+console.log(itemShoppingCart('Meat'))
 //add Sugar at the end of you shopping cart if it has not been already added
-shoppingCart.push('Sugar');
-console.log(shoppingCart);
+function itemShoppingCart (item) {
+  const itemExist = shoppingCart.indexOf(item) !== 0;
+  if (itemExist) {
+    shoppingCart.push(item);
+    return console.log(shoppingCart);
+  } else {
+    return 'This item already exist in the shoppin cart';
+  }
+}
+console.log(itemShoppingCart('Sugar'))
 //remove 'Honey' if you are allergic to honey
 shoppingCart.splice(4, 1);
 console.log(shoppingCart);
@@ -183,37 +201,37 @@ const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24];
 //Sort the array and find the min and max age
 const sortAges = ages.sort((a, b) => a - b);
 console.log(sortAges);
-const minAge = sortAges[FIRST];
-let maxAge = sortAges.length - 1;
-maxAge = sortAges[maxAge];
-console.log(maxAge);
+const firstPositionAge = sortAges[FIRST];
+let lastAPositionAge = sortAges.length - 1;
+lastAPositionAge = sortAges[lastAPositionAge];
+console.log(lastAPositionAge);
 
 //Find the median age(one middle item or two middle items divided by two)
 console.log(sortAges);
-const halfAge = sortAges.length / 2;
-const firstHalfArray = sortAges.splice(0, halfAge);
-const secondHalf = sortAges.splice(-halfAge);
-const lastIndexFirstHalfArray = firstHalfArray[firstHalfArray.length - 1];
-const firstIndexSecondHalfArray = secondHalf[FIRST];
-const medianAge = (lastIndexFirstHalfArray + firstIndexSecondHalfArray) / 2;
+const middlePositionAge = sortAges.length / 2;
+const firstHalfArrayAge = sortAges.splice(0, middlePositionAge);
+const secondHalf = sortAges.splice(-middlePositionAge);
+const lastIndexFirstHalfArrayAge = firstHalfArrayAge[firstHalfArrayAge.length - 1];
+const firstIndexSecondHalfArrayAge = secondHalf[FIRST];
+const medianAge = (lastIndexFirstHalfArrayAge + firstIndexSecondHalfArrayAge) / 2;
 console.log(medianAge);
 
 //Find the average age(all items divided by number of items)
 const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
-const reduceAgesArray = (accumulator, currentValue) => accumulator + currentValue;
-const averageAge = ages.reduce(reduceAgesArray) / ages.length;
+const sumElementsAgesArray = (accumulator, currentValue) => accumulator + currentValue;
+const averageAge = ages.reduce(sumElementsAgesArray) / ages.length;
 console.log(averageAge);
 const roundAverage = Math.ceil(averageAge);
 console.log(roundAverage);
 
 //Find the range of the ages(max minus min)
-const rangeAges = maxAge - minAge;
+const rangeAges = lastAPositionAge - firstPositionAge;
 console.log(rangeAges);
 
 //Compare the value of (min - average) and (max - average), use abs() method
-const maxLessAverage = Math.abs(maxAge - roundAverage);
+const maxLessAverage = Math.abs(lastAPositionAge - roundAverage);
 console.log(maxLessAverage);
-const minLessAverage = Math.abs(minAge - roundAverage);
+const minLessAverage = Math.abs(firstPositionAge - roundAverage);
 console.log(minLessAverage);
 const comparision = maxLessAverage === minLessAverage;
 console.log(comparision);
