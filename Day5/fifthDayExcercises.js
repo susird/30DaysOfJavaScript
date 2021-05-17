@@ -38,13 +38,13 @@ const itCompanies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle'
 console.log(itCompanies);
 
 //8. Print the number of companies in the array
-const numberCompanies = itCompanies.length
-console.log(numberCompanies);
+const numberOfCompanies = itCompanies.length
+console.log(numberOfCompanies);
 
 //9.Print the first company, middle and last company
 console.log(itCompanies[FIRST]);
-const calculateMiddlePositionCompany = Math.floor(itCompanies.length / 2)
-const middlePositionCompany = itCompanies[calculateMiddlePositionCompany];
+const middlePositionCompany = Math.floor(itCompanies.length / 2)
+const middlePositionCompany = itCompanies[middlePositionCompany];
 console.log(middlePositionCompany);
 const lastPositionCompany = itCompanies.length - 1;
 lastPositionCompany = itCompanies[lastPositionCompany];
@@ -74,12 +74,17 @@ function companyExistArray (company) {
 console.log(companyExistArray('Facebook'))
 
 //14. Filter out companies which have more than one 'o' without the filter method
-itCompanies.forEach(element => {
-  const aCountArray = element.replace(/[^o]/g, "").length;
-  if (aCountArray > 1) {
-    return element;
-  }
-});
+function filterCompaniesArray() { 
+  const moreThanOneLetter = [];
+  itCompanies.forEach(element => {
+    let hasMoreThanOneLetter = element.replace(/[^o]/g, "").length;
+    if (hasMoreThanOneLetter <= 1) {
+      moreThanOneLetter.push(element);
+    }
+  })
+  return moreThanOneLetter; 
+}
+console.log(filterCompaniesArray())
 
 //15. Sort the array using sort() method
 console.log(itCompanies.sort());
@@ -87,35 +92,6 @@ console.log(itCompanies.sort());
 //16. Reverse the array using reverse() method
 const reversCompanies = itCompanies.reverse();
 console.log(reversCompanies);
-
-//17. Slice out the first 3 companies from the array
-const sliceFirstPositionCompanies =itCompanies.slice(0, 3)
-console.log(sliceFirstPositionCompanies);
-
-//18. Slice out the last 3 companies from the array
-const sliceLastPositionCompanies = itCompanies.slice(4)
-console.log(sliceLastPositionCompanies);
-
-//19. Slice out the middle IT company or companies from the array
-const slicedMiddleCompanies = itCompanies.slice(3, 4) 
-console.log(slicedMiddleCompanies);
-
-const removeFirtsPositionIt = itCompanies.slice(0, 1);
-console.log(removeFirtsPositionIt);
-
-//21.Remove the middle IT company or companies from the array
-const calculateMiddleItCompany = itCompanies.length / 2;
-const middlePositionCompany = itCompanies.slice(calculateMiddleItCompany);
-const firstPositionMiddleCompany = middlePositionCompany.slice(0,1);
-console.log(firstPositionMiddleCompany);
-
-//22.Remove the last IT company from the array
-const removeLastPositionIt = itCompanies.slice(-1);
-console.log(removeLastPositionIt);
-
-//23.Remove all IT companies
-const removeAllIt = itCompanies.splice();
-console.log(removeAllIt);
 
 //LEVEL 2
 /*1.Create a separate countries.js file and store the countries array in to this file,
@@ -155,9 +131,11 @@ function itemShoppingCart (item) {
   }
 }
 console.log(itemShoppingCart('Sugar'))
+
 //remove 'Honey' if you are allergic to honey
 shoppingCart.splice(4, 1);
 console.log(shoppingCart);
+
 //modify Tea to 'Green Tea'
 shoppingCart[3] = 'Gren Tea';
 console.log(shoppingCart);
@@ -195,65 +173,3 @@ const backEnd = ['Node', 'Express', 'MongoDB'];
 const fullStack = frontEnd.concat(backEnd);
 console.log(fullStack);
 
-//LEVEL 3
-const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24];
-//1. The following is an array of 10 students ages:
-//Sort the array and find the min and max age
-const sortAges = ages.sort((a, b) => a - b);
-console.log(sortAges);
-const firstPositionAge = sortAges[FIRST];
-let lastAPositionAge = sortAges.length - 1;
-lastAPositionAge = sortAges[lastAPositionAge];
-console.log(lastAPositionAge);
-
-//Find the median age(one middle item or two middle items divided by two)
-console.log(sortAges);
-const middlePositionAge = sortAges.length / 2;
-const firstHalfArrayAge = sortAges.splice(0, middlePositionAge);
-const secondHalf = sortAges.splice(-middlePositionAge);
-const lastIndexFirstHalfArrayAge = firstHalfArrayAge[firstHalfArrayAge.length - 1];
-const firstIndexSecondHalfArrayAge = secondHalf[FIRST];
-const medianAge = (lastIndexFirstHalfArrayAge + firstIndexSecondHalfArrayAge) / 2;
-console.log(medianAge);
-
-//Find the average age(all items divided by number of items)
-const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
-const sumElementsAgesArray = (accumulator, currentValue) => accumulator + currentValue;
-const averageAge = ages.reduce(sumElementsAgesArray) / ages.length;
-console.log(averageAge);
-const roundAverage = Math.ceil(averageAge);
-console.log(roundAverage);
-
-//Find the range of the ages(max minus min)
-const rangeAges = lastAPositionAge - firstPositionAge;
-console.log(rangeAges);
-
-//Compare the value of (min - average) and (max - average), use abs() method
-const maxLessAverage = Math.abs(lastAPositionAge - roundAverage);
-console.log(maxLessAverage);
-const minLessAverage = Math.abs(firstPositionAge - roundAverage);
-console.log(minLessAverage);
-const comparision = maxLessAverage === minLessAverage;
-console.log(comparision);
-
-//2.Slice the first ten countries from the countries array
-const firstTenCountries = countries.slice(0, 10)
-console.log(firstTenCountries);
-
-//3.Find the middle country(ies) in the countries array
-const calculateMiddleCountry = Math.floor(countries.length / 2)
-const middlePositionCountry = countries[calculateMiddleCountry];
-console.log(middlePositionCountry);
-
-/*Divide the countries array into two equal arrays if it is even. If countries array is not even , 
-one more country for the first half.*/
-const isOdd = (countries.length % 2) !== 0
-if (isOdd) {
-  const halfOddCountries = Math.ceil(countries.length / 2)
-  const firstOddHalfCountries = countries.splice(0, halfOddCountries);
-  const secondOddHalfCountries = countries.splice(-halfOddCountries);
-} else {
-  const halfCountries = countries.length / 2;
-  const firstHalfCountries = countries.splice(0, halfCountries);
-  const secondHalfCountries = countries.splice(-halfCountries);
-}
