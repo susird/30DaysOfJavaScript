@@ -1,5 +1,6 @@
 const countries = require("./countries.js");
 //LEVEL 3
+const FIRST = 0;
 const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24];
 //1. The following is an array of 10 students ages:
 //Sort the array and find the min and max age
@@ -21,7 +22,8 @@ const medianAge = (lastIndexFirstHalfArrayAge + firstIndexSecondHalfArrayAge) / 
 console.log(medianAge);
 
 //Find the average age(all items divided by number of items)
-const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
+const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24];
+
 const sumElementsAgesArray = (accumulator, currentValue) => accumulator + currentValue;
 const averageAge = ages.reduce(sumElementsAgesArray) / ages.length;
 console.log(averageAge);
@@ -41,7 +43,7 @@ const comparision = maxLessAverage === minLessAverage;
 console.log(comparision);
 
 //2.Slice the first ten countries from the countries array
-const firstTenCountries = countries.slice(0, 10)
+const firstTenCountries = countries.slice(0, 10);
 console.log(firstTenCountries);
 
 //3.Find the middle country(ies) in the countries array
@@ -56,7 +58,7 @@ const halfOddCountries = Math.ceil(countries.length / 2)
 const firstOddHalfCountries = countries.splice(0, halfOddCountries);
 const secondOddHalfCountries = countries.splice(-halfOddCountries);
 if (isOdd) {
-  console.log(firstOddHalfCountries, secondOddHalfCountries)
+  console.log(firstOddHalfCountries, secondOddHalfCountries);
 } else {
-  console.log(firstOddHalfCountries, secondOddHalfCountries)
-}
+  console.log(firstOddHalfCountries, secondOddHalfCountries);
+};

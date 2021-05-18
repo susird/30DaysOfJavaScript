@@ -18,8 +18,8 @@ const firstArrayItem = numbersList[FIRST];
 console.log(firstArrayItem);
 let lastPositionNumber = numbersList.length - 1;
 lastPositionNumber = numbersList[lastPositionNumber];
-console.log(lastPositionNumber)
-const calculateMiddlePositionNumber = Math.floor(numbersList.length / 2)
+console.log(lastPositionNumber);
+const calculateMiddlePositionNumber = Math.floor(numbersList.length / 2);
 const middlePositionNumber = numbersList[calculateMiddlePositionNumber];
 console.log(middlePositionNumber);
 
@@ -38,12 +38,12 @@ const itCompanies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle'
 console.log(itCompanies);
 
 //8. Print the number of companies in the array
-const numberOfCompanies = itCompanies.length
+const numberOfCompanies = itCompanies.length;
 console.log(numberOfCompanies);
 
 //9.Print the first company, middle and last company
 console.log(itCompanies[FIRST]);
-const middlePositionCompany = Math.floor(itCompanies.length / 2)
+const middlePositionCompany = Math.floor(itCompanies.length / 2);
 const middlePositionCompany = itCompanies[middlePositionCompany];
 console.log(middlePositionCompany);
 const lastPositionCompany = itCompanies.length - 1;
@@ -57,24 +57,25 @@ itCompanies.forEach(element => console.log(element));
 itCompanies.map(company => console.log(company.toUpperCase()));
 
 //12.Print the array like as a sentence: Facebook, Google, Microsoft, Apple, IBM,Oracle and Amazon are big IT companies. 
-const convertArrayToString = itCompanies.toString()
+const convertArrayToString = itCompanies.toString();
 const arraySentence = `${convertArrayToString} are big IT companies`;
 console.log(arraySentence);
 
 /*13. Check if a certain company exists in the itCompanies array. 
 If it exist return the company else return a company is not found*/
-function companyExistArray (company) {
+function companyExistArray(company) {
   const companyExist = itCompanies.indexOf(company) === 0;
   if (companyExist) {
     return 'This company does exist';
   } else {
     return 'Company is not found';
   }
-}
-console.log(companyExistArray('Facebook'))
+};
+
+console.log(companyExistArray('Facebook'));
 
 //14. Filter out companies which have more than one 'o' without the filter method
-function filterCompaniesArray() { 
+function filterCompaniesArray() {
   const moreThanOneLetter = [];
   itCompanies.forEach(element => {
     let hasMoreThanOneLetter = element.replace(/[^o]/g, "").length;
@@ -82,16 +83,18 @@ function filterCompaniesArray() {
       moreThanOneLetter.push(element);
     }
   })
-  return moreThanOneLetter; 
-}
-console.log(filterCompaniesArray())
+  return moreThanOneLetter;
+};
+
+console.log(filterCompaniesArray());
 
 //15. Sort the array using sort() method
-console.log(itCompanies.sort());
+const sortArrayCompanies = itCompanies.sort();
+console.log(sortArrayCompanies);
 
 //16. Reverse the array using reverse() method
-const reversCompanies = itCompanies.reverse();
-console.log(reversCompanies);
+const reverseCompanies = itCompanies.reverse();
+console.log(reverseCompanies);
 
 //LEVEL 2
 /*1.Create a separate countries.js file and store the countries array in to this file,
@@ -104,41 +107,8 @@ console.log(webTechs);
 const text = 'I love teaching and empowering people. I teach HTML, CSS, JS, React, Python.';
 const words = text.replace(/[.,]/g, "").split(' ');
 console.log(words);
-const countWordsText = words.length
+const countWordsText = words.length;
 console.log(countWordsText);
-
-//3.In the following shopping cart add, remove, edit items
-let shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey'];
-//add 'Meat' in the beginning of your shopping cart if it has not been already added
-function itemShoppingCart (item) {
-  const itemExist = shoppingCart.indexOf(item) !== 0;
-  if (itemExist) {
-     shoppingCart.unshift(item);
-     return console.log(shoppingCart)
-  } else {
-    return 'This item already exist in the shoppin cart';
-  }
-}
-console.log(itemShoppingCart('Meat'))
-//add Sugar at the end of you shopping cart if it has not been already added
-function itemShoppingCart (item) {
-  const itemExist = shoppingCart.indexOf(item) !== 0;
-  if (itemExist) {
-    shoppingCart.push(item);
-    return console.log(shoppingCart);
-  } else {
-    return 'This item already exist in the shoppin cart';
-  }
-}
-console.log(itemShoppingCart('Sugar'))
-
-//remove 'Honey' if you are allergic to honey
-shoppingCart.splice(4, 1);
-console.log(shoppingCart);
-
-//modify Tea to 'Green Tea'
-shoppingCart[3] = 'Gren Tea';
-console.log(shoppingCart);
 
 /*4. In countries array check if 'Ethiopia' exists in the array if it exists print 
 'ETHIOPIA'. If it does not exist add to the countries list.*/
@@ -151,7 +121,8 @@ function findCountry(countries = [], country = '') {
     const mergeArrays = countries.concat([country]);
     console.log(mergeArrays);
   }
-}
+};
+
 findCountry(countries, 'Ethiopia');
 
 /*5.In the webTechs array check if Sass exists in the array and if it exists print 'Sass is a
@@ -164,7 +135,8 @@ function findgWebTech(webTech, tech) {
     const mergeTech = webTechs.concat([tech]);
     console.log(mergeTech);
   }
-}
+};
+
 findgWebTech(webTechs, 'Sass');
 
 //6.Concatenate the following two variables and store it in a fullStack variable.
@@ -172,4 +144,3 @@ const frontEnd = ['HTML', 'CSS', 'JS', 'React', 'Redux'];
 const backEnd = ['Node', 'Express', 'MongoDB'];
 const fullStack = frontEnd.concat(backEnd);
 console.log(fullStack);
-
