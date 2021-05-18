@@ -42,7 +42,8 @@ const numberOfCompanies = itCompanies.length;
 console.log(numberOfCompanies);
 
 //9.Print the first company, middle and last company
-console.log(itCompanies[FIRST]);
+const firstElement = itCompanies[FIRST]
+console.log(firstElement);
 const middlePositionCompany = Math.floor(itCompanies.length / 2);
 const middlePositionCompany = itCompanies[middlePositionCompany];
 console.log(middlePositionCompany);
