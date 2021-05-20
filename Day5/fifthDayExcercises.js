@@ -5,23 +5,59 @@ const FIRST = 0;
 // 30 Days Of JavaScript: Arrays 
 //LEVEL 1
 
+function createArray(numberOfElements) {
+  return new Array(numberOfElements);
+}
+
 //1. Declare an empty array
-const emptyArray = Array();
+const emptyArray = createArray(0);
+console.log(emptyArray)
+
 //2. Declare an array with more than 5 number of elements
-const numbersList = [5, 4, 8, 2, 9, 3, 7];
+function fillTheArray(number, arrayInput) {
+  return arrayInput.fill(number);
+}
+const arrayWithMoreThanFiveNum = createArray(8);
+const arrayOfNumbers = fillTheArray(6, arrayWithMoreThanFiveNum);
+console.log(arrayOfNumbers);
 
 //3.Find the length of your array
-console.log(numbersList.length);
+function findLengthArray(array) {
+  return array.length;
+}
+const lengthArray = findLengthArray(arrayOfNumbers);
+console.log(lengthArray);
 
 //4. Get the first item, the middle item and the last item of the array
-const firstArrayItem = numbersList[FIRST];
-console.log(firstArrayItem);
-let lastPositionNumber = numbersList.length - 1;
-lastPositionNumber = numbersList[lastPositionNumber];
-console.log(lastPositionNumber);
-const calculateMiddlePositionNumber = Math.floor(numbersList.length / 2);
-const middlePositionNumber = numbersList[calculateMiddlePositionNumber];
-console.log(middlePositionNumber);
+function getPositionItem(array, position) {
+  if (position === 'first') {
+    const firstArrayItem = array[0]
+    return firstArrayItem
+  }
+  if (position === 'middle') {
+    const isEvenArray = array.length % 2 === 0;
+    if (isEvenArray) {
+      const positionEven = array.length / 2;
+      const firstElement = array[positionEven]
+      const secondElement = array[positionEven - 1]
+      const middleArrayElement = (firstElement + secondElement) / 2;
+      const elementMiddlePosition = array[middleArrayElement];
+      // it doesn't work yet
+      return elementMiddlePosition
+    } else {
+      const positionOdd = Math.floor(array.length / 2);
+      const middleArrayItem = array[positionOdd];
+      return middleArrayItem;
+    }
+  }
+  if (position === 'last') {
+    const lastArrayItem = array[array.length - 1];
+    return lastArrayItem
+  }
+}
+const positionItem = getPositionItem(arrayOfNumbers, 'middle');
+console.log(positionItem);
+//it's not finished yet
 
 /*5. Declare an array called mixedDataTypes, put different data types in the array and find the 
 length of the array. The array size should be greater than 5 */
@@ -57,28 +93,32 @@ itCompanies.forEach(element => console.log(element));
 //11. Change each company name to uppercase one by one and print them out
 itCompanies.map(company => console.log(company.toUpperCase()));
 
-//12.Print the array like as a sentence: Facebook, Google, Microsoft, Apple, IBM,Oracle and Amazon are big IT companies. 
-const convertArrayToString = itCompanies.toString();
-const arraySentence = `${convertArrayToString} are big IT companies`;
-console.log(arraySentence);
+// //12.Print the array like as a sentence: Facebook, Google, Microsoft, Apple, IBM,Oracle and Amazon are big IT companies. 
+function printArrayAsSentence (array, sentence) {
+  const convertArrayToString = array.toString();
+  const arraySentence = `${convertArrayToString} ${sentence}`;
+  return arraySentence
+}
+const sentence = printArrayAsSentence(itCompanies, 'are big IT companies.');
+console.log(sentence);
 
-/*13. Check if a certain company exists in the itCompanies array. 
-If it exist return the company else return a company is not found*/
-function companyExistArray(company) {
-  const companyExist = itCompanies.indexOf(company) === 0;
+// /*13. Check if a certain company exists in the itCompanies array. 
+// If it exist return the company else return a company is not found*/
+function companyExistArray(array, company) {
+  const companyExist = array.indexOf(company) === 0;
   if (companyExist) {
-    return 'This company does exist';
+    return company;
   } else {
     return 'Company is not found';
   }
 };
+const company = companyExistArray(itCompanies, 'Facebook');
+console.log(company);
 
-console.log(companyExistArray('Facebook'));
-
-//14. Filter out companies which have more than one 'o' without the filter method
-function filterCompaniesArray() {
+// //14. Filter out companies which have more than one 'o' without the filter method
+function filterCompaniesArray(array) {
   const moreThanOneLetter = [];
-  itCompanies.forEach(element => {
+  array.forEach(element => {
     let hasMoreThanOneLetter = element.replace(/[^o]/g, "").length;
     if (hasMoreThanOneLetter <= 1) {
       moreThanOneLetter.push(element);
@@ -86,62 +126,66 @@ function filterCompaniesArray() {
   })
   return moreThanOneLetter;
 };
+const filter = filterCompaniesArray(itCompanies);
+console.log(filter);
 
-console.log(filterCompaniesArray());
+// //15. Sort the array using sort() method
+function sortArray (arrayInput) {
+  return arrayInput.sort();
+}
+const arraySorted = sortArray(itCompanies);
+console.log(arraySorted);
 
-//15. Sort the array using sort() method
-const sortArrayCompanies = itCompanies.sort();
-console.log(sortArrayCompanies);
-
-//16. Reverse the array using reverse() method
-const reverseCompanies = itCompanies.reverse();
-console.log(reverseCompanies);
-
-//LEVEL 2
+// //LEVEL 2
 /*1.Create a separate countries.js file and store the countries array in to this file,
  create a separate file web_techs.js and store the webTechs array in to this file. Access both file in main.js file*/
 
 console.log(countries);
 console.log(webTechs);
 
-//2. First remove all the punctuations and change the string to array and count the number of words in the array
-const text = 'I love teaching and empowering people. I teach HTML, CSS, JS, React, Python.';
-const words = text.replace(/[.,]/g, "").split(' ');
-console.log(words);
-const countWordsText = words.length;
-console.log(countWordsText);
+function convertStringToArray (string) {
+  const words = string.replace(/[.,]/g, "").split(' ');
+  console.log(words)
+  const countWordsText = words.length;
+  return countWordsText
+}
+const newArray = convertStringToArray(text);
+console.log(newArray);
 
-/*4. In countries array check if 'Ethiopia' exists in the array if it exists print 
-'ETHIOPIA'. If it does not exist add to the countries list.*/
 
-function findCountry(countries = [], country = '') {
-  const hasCountry = countries.indexOf(country) !== -1;
+// /*4. In countries array check if 'Ethiopia' exists in the array if it exists print 
+// 'ETHIOPIA'. If it does not exist add to the countries list.*/
+
+function findCountry(array = [], country = '') {
+  const hasCountry = array.indexOf(country) !== -1;
   if (hasCountry) {
-    console.log(country);
+    return country;
   } else {
-    const mergeArrays = countries.concat([country]);
-    console.log(mergeArrays);
+    const mergedArrays = array.concat([country]);
+    return mergedArrays;
   }
 };
-
-findCountry(countries, 'Ethiopia');
+const country = findCountry(countries, 'Ethiopia');
+console.log(country)
 
 /*5.In the webTechs array check if Sass exists in the array and if it exists print 'Sass is a
 CSS preprocess'. If it does not exist add Sass to the array and print the array.*/
-function findgWebTech(webTech, tech) {
-  const hasTech = webTech.indexOf(tech) !== -1;
+function findWebTechs(array, tech) {
+  const hasTech = array.indexOf(tech) !== -1;
   if (hasTech) {
-    console.log(`${tech} is a CSS preprocess`);
+     return `${tech} is a CSS preprocess`;
   } else {
-    const mergeTech = webTechs.concat([tech]);
-    console.log(mergeTech);
+    return array.concat([tech]);
   }
 };
+const webTechtoFind = findWebTechs(webTechs, 'Sass');
+console.log(webTechtoFind);
 
-findgWebTech(webTechs, 'Sass');
-
-//6.Concatenate the following two variables and store it in a fullStack variable.
+// //6.Concatenate the following two variables and store it in a fullStack variable.
 const frontEnd = ['HTML', 'CSS', 'JS', 'React', 'Redux'];
 const backEnd = ['Node', 'Express', 'MongoDB'];
-const fullStack = frontEnd.concat(backEnd);
+function concatenateArrays (array1, array2) {
+  return array1.concat(array2);
+}
+const fullStack = (concatenateArrays(frontEnd, backEnd))
 console.log(fullStack);
