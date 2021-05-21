@@ -42,7 +42,6 @@ function getPositionItem(array, position) {
       const secondElement = array[positionEven - 1]
       const middleArrayElement = (firstElement + secondElement) / 2;
       const elementMiddlePosition = array[middleArrayElement];
-      // it doesn't work yet
       return elementMiddlePosition
     } else {
       const positionOdd = Math.floor(array.length / 2);
@@ -55,8 +54,8 @@ function getPositionItem(array, position) {
     return lastArrayItem
   }
 }
-const positionItem = getPositionItem(arrayOfNumbers, 'middle');
-console.log(positionItem);
+const positionItem = getPositionItem(arrayOfNumbers, 'first');
+console.log(positionItem, 'ooooo');
 //it's not finished yet
 
 /*5. Declare an array called mixedDataTypes, put different data types in the array and find the 
@@ -67,31 +66,74 @@ console.log(lengthArray);
 
 // /*6.Declare an array variable name itCompanies and assign initial values Facebook, Google, 
 // Microsoft, Apple, IBM, Oracle and Amazon */
-
 const itCompanies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon'];
 
 //7.Print the array using console.log()
-console.log(itCompanies);
+function printArray (array) {
+  return array
+}
+const arrayCompanies = printArray(itCompanies)
+console.log(arrayCompanies);
 
 //8. Print the number of companies in the array
-const numberOfCompanies = itCompanies.length;
+function printNumberOfCompanies (arrayInpt) {
+  return itCompanies.length;
+}
+const numberOfCompanies = printNumberOfCompanies(itCompanies)
 console.log(numberOfCompanies);
 
 //9.Print the first company, middle and last company
-const firstElement = itCompanies[FIRST]
-console.log(firstElement);
-const middlePositionCompany = Math.floor(itCompanies.length / 2);
-const middlePositionCompany = itCompanies[middlePositionCompany];
-console.log(middlePositionCompany);
-const lastPositionCompany = itCompanies.length - 1;
-lastPositionCompany = itCompanies[lastPositionCompany];
-console.log(lastPositionCompany);
+function printElementsArray (arrayInput, position) {
+  if (position === 'first') {
+    const firstArrayItem = arrayInput[0];
+    return firstArrayItem;
+  }
+  if (position === 'middle') {
+    const isEvenArray = arrayInput.length % 2 === 0;
+    if (isEvenArray) {
+      const positionEven = arrayInput.length / 2;
+      const firstElement = arrayInput[positionEven];
+      const secondElement = arrayInput[positionEven - 1];
+      const middleArrayElement = `${firstElement} ${secondElement}`;
+      return middleArrayElement;
+    } else {
+      const positionOdd = Math.floor(arrayInput.length / 2);
+      const middleArrayItem = arrayInput[positionOdd];
+      return middleArrayItem;
+    }
+  }
+  if (position === 'last') {
+    const lastArrayItem = arrayInput[arrayInput.length - 1];
+    return lastArrayItem;
+  }
+}
+
+//Print the first company
+const firtsPositionIT = printElementsArray(itCompanies, 'first');
+console.log(firtsPositionIT);
+
+//Print the middle company
+const middlePositionIT = printElementsArray(itCompanies, 'middle');
+console.log(middlePositionIT);
+
+//Print the last company
+const lastPositionIT = printElementsArray(itCompanies, 'middle');
+console.log(lastPositionIT);
 
 //10.Print out each company
-itCompanies.forEach(element => console.log(element));
+function printOutArray (arrayInput) {
+  const arrayOut = arrayInput.forEach(element => console.log(element));
+  return arrayOut;
+}
+printOutArray(itCompanies);
 
 //11. Change each company name to uppercase one by one and print them out
-itCompanies.map(company => console.log(company.toUpperCase()));
+function changeToUppercase (arrayInput) {
+  const uppercase = arrayInput.map(company => company.toUpperCase());
+  return uppercase;
+}
+const toUpperCase = changeToUppercase(itCompanies);
+console.log(toUpperCase);
 
 // //12.Print the array like as a sentence: Facebook, Google, Microsoft, Apple, IBM,Oracle and Amazon are big IT companies. 
 function printArrayAsSentence (array, sentence) {
@@ -166,7 +208,7 @@ function findCountry(array = [], country = '') {
   }
 };
 const country = findCountry(countries, 'Ethiopia');
-console.log(country)
+console.log(country);
 
 /*5.In the webTechs array check if Sass exists in the array and if it exists print 'Sass is a
 CSS preprocess'. If it does not exist add Sass to the array and print the array.*/
