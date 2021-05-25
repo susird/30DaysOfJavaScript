@@ -35,7 +35,6 @@ console.log(lastTreePositionArray);
 const middlePositionArray = slicePositionElements(itCompanies, 'middle');
 console.log(middlePositionArray);
 
-
 //21.Remove the middle IT company or companies from the array
 const itCompanies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon'];
 const calculateMiddleItCompany = Math.floor(itCompanies.length / 2);
@@ -63,11 +62,11 @@ function removeElement(indexToDelete, array) {
   function printElementandIndex(element, index) {
     if (indexToDelete !== index) {
       newArray.push(element);
-    };
-  };
+    }
+  }
   array.forEach(printElementandIndex);
   return newArray;
-};
+}
 
 const lasITCompany = removeElement(calculateMiddleItCompany, itCompanies);
 console.log(lasITCompany);
@@ -85,7 +84,8 @@ function removeAllElements(shoppingCart) {
   };
   shoppingCart.forEach(removeElements);
   return newArray;
-};
+}
+
 const removedElements = removeAllElements(shoppingCart1);
 console.log(removedElements);
 
@@ -102,7 +102,8 @@ function itemShoppingCart(item) {
   } else {
     return 'This item already exist in the shoppin cart';
   }
-};
+}
+
 const addedItemAtBeginning = itemShoppingCart('Meat');
 console.log(addedItemAtBeginning);
 
@@ -115,7 +116,8 @@ function itemShoppingCart(item) {
   } else {
     return 'This item already exist in the shoppin cart';
   }
-};
+}
+
 const addItemAtTheEnd = itemShoppingCart('Sugar');
 console.log(addItemAtTheEnd);
 
@@ -126,11 +128,12 @@ function removeElement(itemToDelete, isAllergic, shoppingCart) {
     const itemtoRemove = itemToDelete === element && isAllergic;
     if (itemtoRemove !== true) {
       newArray.push(element);
-    };
-  };
+    }
+  }
   shoppingCart.forEach(removeIfAllergic);
   return newArray;
-};
+}
+
 const removedItem = removeElement('Honey', true, shoppingCart1);
 console.log(removedItem);
 
@@ -143,9 +146,10 @@ function modifyElement(itemToModify, ItemToAdd, shoppingCart) {
     if (itemToReplace) {
       newArray[index] = ItemToAdd;
     }
-  };
+  }
   shoppingCart.forEach(replaceElement);
   return newArray;
-};
+}
+
 const modifyedItem = modifyElement('Tea', 'Green Tea', shoppingCart1);
 console.log(modifyedItem);

@@ -37,9 +37,9 @@ function getPositionItem(array, position) {
     const isEvenArray = array.length % 2 === 0;
     if (isEvenArray) {
       const positionEven = array.length / 2;
-      const firstElement = array[positionEven];
-      const secondElement = array[positionEven - 1];
-      const middleArrayElement = (firstElement + secondElement) / 2;
+      const firstElementArray = array[positionEven];
+      const secondElementArray = array[positionEven - 1];
+      const middleArrayElement = (firstElementArray + secondElementArray) / 2;
       const elementMiddlePosition = array[middleArrayElement];
       return elementMiddlePosition;
     } else {
@@ -53,8 +53,9 @@ function getPositionItem(array, position) {
     return lastArrayItem;
   }
 }
+
 const positionItem = getPositionItem(arrayOfNumbers, 'first');
-console.log(positionItem, 'ooooo');
+console.log(positionItem);
 //it's not finished yet
 
 /*5. Declare an array called mixedDataTypes, put different data types in the array and find the 
@@ -135,6 +136,7 @@ function changeToUppercase(arrayInput) {
   const uppercase = arrayInput.map(company => company.toUpperCase());
   return uppercase;
 }
+
 const toUpperCase = changeToUppercase(itCompanies);
 console.log(toUpperCase);
 
@@ -144,6 +146,7 @@ function printArrayAsSentence(array, sentence) {
   const arraySentence = `${convertArrayToString} ${sentence}`;
   return arraySentence;
 }
+
 const sentence = printArrayAsSentence(itCompanies, 'are big IT companies.');
 console.log(sentence);
 
@@ -156,7 +159,8 @@ function companyExistArray(array, company) {
   } else {
     return 'Company is not found';
   }
-};
+}
+
 const company = companyExistArray(itCompanies, 'Facebook');
 console.log(company);
 
@@ -170,7 +174,8 @@ function filterCompaniesArray(array) {
     }
   })
   return moreThanOneLetter;
-};
+}
+
 const filter = filterCompaniesArray(itCompanies);
 console.log(filter);
 
@@ -178,6 +183,7 @@ console.log(filter);
 function sortArray(arrayInput) {
   return arrayInput.sort();
 }
+
 const arraySorted = sortArray(itCompanies);
 console.log(arraySorted);
 
@@ -189,16 +195,16 @@ console.log(countries);
 console.log(webTechs);
 
 //2. First remove all the punctuations and change the string to array and count the number of words in the array
-const text = 'I love teaching and empowering people. I teach HTML, CSS, JS, React, Python.'
+const text = 'I love teaching and empowering people. I teach HTML, CSS, JS, React, Python.';
 function convertStringToArray(string) {
   const words = string.replace(/[.,]/g, "").split(' ');
   const countWordsText = words.length;
   const stringAdnNumOfWords = `${words} ${countWordsText}`;
   return stringAdnNumOfWords;
 }
+
 const newArray = convertStringToArray(text);
 console.log(newArray);
-
 
 // /*4. In countries array check if 'Ethiopia' exists in the array if it exists print 
 // 'ETHIOPIA'. If it does not exist add to the countries list.*/
@@ -211,7 +217,8 @@ function findCountry(array = [], country = '') {
     const mergedArrays = array.concat([country]);
     return mergedArrays;
   }
-};
+}
+
 const country = findCountry(countries, 'Ethiopia');
 console.log(country);
 
@@ -224,7 +231,8 @@ function findWebTechs(array, tech) {
   } else {
     return array.concat([tech]);
   }
-};
+}
+
 const webTechtoFind = findWebTechs(webTechs, 'Sass');
 console.log(webTechtoFind);
 
@@ -234,5 +242,6 @@ const backEnd = ['Node', 'Express', 'MongoDB'];
 function concatenateArrays(array1, array2) {
   return array1.concat(array2);
 }
+
 const fullStack = (concatenateArrays(frontEnd, backEnd));
 console.log(fullStack);

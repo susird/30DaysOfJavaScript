@@ -15,11 +15,11 @@ function sortToFindPositions(array, position) {
   }
 }
 //first position or min age array
-const firstPosition = sortToFindPositions(ages, 'min');
-console.log(firstPosition);
+const firstPositionAgeArray = sortToFindPositions(ages, 'min');
+console.log(firstPositionAgeArray);
 //last position or max age array
-const lastPosition = sortToFindPositions(ages, 'max');
-console.log(lastPosition);
+const lastPositionAgeArray = sortToFindPositions(ages, 'max');
+console.log(lastPositionAgeArray);
 
 //Find the median age(one middle item or two middle items divided by two)
 function findMiddlePosition(array) {
@@ -45,6 +45,7 @@ function findAverage(array) {
   const averageAge = array.reduce(sumElementsAgesArray) / array.length;
   return averageAge;
 }
+
 const average = findAverage(ages);
 console.log(average);
 
@@ -56,24 +57,28 @@ function findRange(array) {
   const rangeArray = lastAPositionArray - firstPositionArray;
   return rangeArray;
 }
+
 const range = findRange(ages);
 console.log(range);
 
 //Compare the value of (min - average) and (max - average), use abs() method
 function compareValuesArray(array) {
   const sumElementsAgesArray = (accumulator, currentValue) => accumulator + currentValue;
-  const averageArray = array.reduce(sumElementsAgesArray) / array.length;
+  const averageArray = array.reduce(sumElementsAgesArray, 0) / array.length;
   const sortArray = array.sort((a, b) => a - b);
   const firstPositionArray = sortArray[0];
   const lastAPositionArray = sortArray[sortArray.length - 1];
   const maxLessAverage = Math.abs(lastAPositionArray - averageArray);
   const minLessAverage = Math.abs(firstPositionArray - averageArray);
-  return maxLessAverage === minLessAverage;
+  if (maxLessAverage === minLessAverage) {
+    return 'The values are the same';
+  }else {
+    return 'The values are different';
+  }
 }
 
 const comparitionValues = compareValuesArray(ages);
 console.log(comparitionValues);
-// is not finish yet :)
 
 function slicePositionElements(arrayInput, position) {
   if (position === 'first teen') {
