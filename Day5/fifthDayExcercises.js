@@ -73,11 +73,7 @@ console.log(arrayLength);
 const itCompanies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon'];
 
 //7.Print the array using console.log()
-function printArray(array) {
-  return array;
-}
-const arrayCompanies = printArray(itCompanies);
-console.log(arrayCompanies);
+console.log(itCompanies);
 
 //8. Print the number of companies in the array
 function printNumberOfCompanies(arrayInpt) {
