@@ -1,6 +1,5 @@
 const webTechs = require("./web_techs.js");
 const countries = require("./countries.js");
-const FIRST = 0;
 
 // 30 Days Of JavaScript: Arrays 
 //LEVEL 1
@@ -11,7 +10,7 @@ function createArray(numberOfElements) {
 
 //1. Declare an empty array
 const emptyArray = createArray(0);
-console.log(emptyArray)
+console.log(emptyArray);
 
 //2. Declare an array with more than 5 number of elements
 function fillTheArray(number, arrayInput) {
@@ -31,18 +30,18 @@ console.log(lengthArray);
 //4. Get the first item, the middle item and the last item of the array
 function getPositionItem(array, position) {
   if (position === 'first') {
-    const firstArrayItem = array[0]
-    return firstArrayItem
+    const firstArrayItem = array[0];
+    return firstArrayItem;
   }
   if (position === 'middle') {
     const isEvenArray = array.length % 2 === 0;
     if (isEvenArray) {
       const positionEven = array.length / 2;
-      const firstElement = array[positionEven]
-      const secondElement = array[positionEven - 1]
+      const firstElement = array[positionEven];
+      const secondElement = array[positionEven - 1];
       const middleArrayElement = (firstElement + secondElement) / 2;
       const elementMiddlePosition = array[middleArrayElement];
-      return elementMiddlePosition
+      return elementMiddlePosition;
     } else {
       const positionOdd = Math.floor(array.length / 2);
       const middleArrayItem = array[positionOdd];
@@ -51,7 +50,7 @@ function getPositionItem(array, position) {
   }
   if (position === 'last') {
     const lastArrayItem = array[array.length - 1];
-    return lastArrayItem
+    return lastArrayItem;
   }
 }
 const positionItem = getPositionItem(arrayOfNumbers, 'first');
@@ -60,30 +59,34 @@ console.log(positionItem, 'ooooo');
 
 /*5. Declare an array called mixedDataTypes, put different data types in the array and find the 
 length of the array. The array size should be greater than 5 */
-const mixedDataTypes = ['Luna', 1995, true, [1, 2, 3], '1000', 55];
-const lengthArray = mixedDataTypes.length;
-console.log(lengthArray);
+const mixDataTypes = ['Luna', 1995, true, [1, 2, 3], '1000', 55];
+function findArrayLength(arrayInput) {
+  const lengthArray = arrayInput.length;
+  return lengthArray;
+}
+const arrayLength = findArrayLength(mixDataTypes);
+console.log(arrayLength);
 
 // /*6.Declare an array variable name itCompanies and assign initial values Facebook, Google, 
 // Microsoft, Apple, IBM, Oracle and Amazon */
 const itCompanies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon'];
 
 //7.Print the array using console.log()
-function printArray (array) {
-  return array
+function printArray(array) {
+  return array;
 }
-const arrayCompanies = printArray(itCompanies)
+const arrayCompanies = printArray(itCompanies);
 console.log(arrayCompanies);
 
 //8. Print the number of companies in the array
-function printNumberOfCompanies (arrayInpt) {
-  return itCompanies.length;
+function printNumberOfCompanies(arrayInpt) {
+  return arrayInpt.length;
 }
-const numberOfCompanies = printNumberOfCompanies(itCompanies)
+const numberOfCompanies = printNumberOfCompanies(itCompanies);
 console.log(numberOfCompanies);
 
 //9.Print the first company, middle and last company
-function printElementsArray (arrayInput, position) {
+function printElementsArray(arrayInput, position) {
   if (position === 'first') {
     const firstArrayItem = arrayInput[0];
     return firstArrayItem;
@@ -121,14 +124,14 @@ const lastPositionIT = printElementsArray(itCompanies, 'middle');
 console.log(lastPositionIT);
 
 //10.Print out each company
-function printOutArray (arrayInput) {
+function printOutArray(arrayInput) {
   const arrayOut = arrayInput.forEach(element => console.log(element));
   return arrayOut;
 }
 printOutArray(itCompanies);
 
 //11. Change each company name to uppercase one by one and print them out
-function changeToUppercase (arrayInput) {
+function changeToUppercase(arrayInput) {
   const uppercase = arrayInput.map(company => company.toUpperCase());
   return uppercase;
 }
@@ -136,10 +139,10 @@ const toUpperCase = changeToUppercase(itCompanies);
 console.log(toUpperCase);
 
 // //12.Print the array like as a sentence: Facebook, Google, Microsoft, Apple, IBM,Oracle and Amazon are big IT companies. 
-function printArrayAsSentence (array, sentence) {
+function printArrayAsSentence(array, sentence) {
   const convertArrayToString = array.toString();
   const arraySentence = `${convertArrayToString} ${sentence}`;
-  return arraySentence
+  return arraySentence;
 }
 const sentence = printArrayAsSentence(itCompanies, 'are big IT companies.');
 console.log(sentence);
@@ -172,7 +175,7 @@ const filter = filterCompaniesArray(itCompanies);
 console.log(filter);
 
 // //15. Sort the array using sort() method
-function sortArray (arrayInput) {
+function sortArray(arrayInput) {
   return arrayInput.sort();
 }
 const arraySorted = sortArray(itCompanies);
@@ -185,11 +188,13 @@ console.log(arraySorted);
 console.log(countries);
 console.log(webTechs);
 
-function convertStringToArray (string) {
+//2. First remove all the punctuations and change the string to array and count the number of words in the array
+const text = 'I love teaching and empowering people. I teach HTML, CSS, JS, React, Python.'
+function convertStringToArray(string) {
   const words = string.replace(/[.,]/g, "").split(' ');
-  console.log(words)
   const countWordsText = words.length;
-  return countWordsText
+  const stringAdnNumOfWords = `${words} ${countWordsText}`;
+  return stringAdnNumOfWords;
 }
 const newArray = convertStringToArray(text);
 console.log(newArray);
@@ -215,7 +220,7 @@ CSS preprocess'. If it does not exist add Sass to the array and print the array.
 function findWebTechs(array, tech) {
   const hasTech = array.indexOf(tech) !== -1;
   if (hasTech) {
-     return `${tech} is a CSS preprocess`;
+    return `${tech} is a CSS preprocess`;
   } else {
     return array.concat([tech]);
   }
@@ -226,8 +231,8 @@ console.log(webTechtoFind);
 // //6.Concatenate the following two variables and store it in a fullStack variable.
 const frontEnd = ['HTML', 'CSS', 'JS', 'React', 'Redux'];
 const backEnd = ['Node', 'Express', 'MongoDB'];
-function concatenateArrays (array1, array2) {
+function concatenateArrays(array1, array2) {
   return array1.concat(array2);
 }
-const fullStack = (concatenateArrays(frontEnd, backEnd))
+const fullStack = (concatenateArrays(frontEnd, backEnd));
 console.log(fullStack);

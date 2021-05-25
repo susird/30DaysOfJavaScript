@@ -1,17 +1,16 @@
 const itCompanies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon', 'Holi'];
 
-
 function slicePositionElements(arrayInput, position) {
   if (position === 'first three') {
     const sliceFirstPositionArray = arrayInput.slice(0, 3);
-    return sliceFirstPositionArray
+    return sliceFirstPositionArray;
   }
   if (position === 'middle') {
     const isEvenArray = arrayInput.length % 2 === 0;
     if (isEvenArray) {
       const middlePositionElementEven = Math.ceil(arrayInput.length / 3);
       const sliceMiddlePositionElementEven = arrayInput.slice(middlePositionElementEven, middlePositionElementEven + 2);
-      return sliceMiddlePositionElementEven
+      return sliceMiddlePositionElementEven;
     } else {
       const middlePositionElement = Math.floor(arrayInput.length / 2);
       const sliceMiddlePositionElementOdd = arrayInput.slice(middlePositionElement, middlePositionElement + 1);
@@ -26,14 +25,14 @@ function slicePositionElements(arrayInput, position) {
 
 //17. Slice out the first 3 companies from the array
 const firstTreePositionArray = slicePositionElements(itCompanies, 'first three');
-console.log(firstTreePositionArray)
+console.log(firstTreePositionArray);
 
 // //18. Slice out the last 3 companies from the array
 const lastTreePositionArray = slicePositionElements(itCompanies, 'last three');
 console.log(lastTreePositionArray);
 
 // //19. Slice out the middle IT company or companies from the array
- const middlePositionArray = slicePositionElements(itCompanies, 'middle');
+const middlePositionArray = slicePositionElements(itCompanies, 'middle');
 console.log(middlePositionArray);
 
 
@@ -87,8 +86,8 @@ function removeAllElements(shoppingCart) {
   shoppingCart.forEach(removeElements);
   return newArray;
 };
-
-// console.log(removeAllElements(shoppingCart1));
+const removedElements = removeAllElements(shoppingCart1);
+console.log(removedElements);
 
 //LEVEL 2
 //3.In the following shopping cart add, remove, edit items
@@ -104,7 +103,7 @@ function itemShoppingCart(item) {
     return 'This item already exist in the shoppin cart';
   }
 };
-const addedItemAtBeginning =itemShoppingCart('Meat');
+const addedItemAtBeginning = itemShoppingCart('Meat');
 console.log(addedItemAtBeginning);
 
 //add Sugar at the end of you shopping cart if it has not been already added
@@ -148,5 +147,5 @@ function modifyElement(itemToModify, ItemToAdd, shoppingCart) {
   shoppingCart.forEach(replaceElement);
   return newArray;
 };
-const modifyedItem = modifyElement('Tea', 'Green Tea', shoppingCart1)
+const modifyedItem = modifyElement('Tea', 'Green Tea', shoppingCart1);
 console.log(modifyedItem);
