@@ -56,7 +56,7 @@ function getPositionItem(array, position) {
 
 const positionItem = getPositionItem(arrayOfNumbers, 'first');
 console.log(positionItem);
-//it's not finished yet
+
 
 /*5. Declare an array called mixedDataTypes, put different data types in the array and find the 
 length of the array. The array size should be greater than 5 */
