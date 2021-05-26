@@ -122,8 +122,7 @@ console.log(lastPositionIT);
 
 //10.Print out each company
 function printOutArray(arrayInput) {
-  const arrayOut = arrayInput.forEach(element => console.log(element));
-  return arrayOut;
+  return arrayInput.forEach(element => console.log(element));
 }
 printOutArray(itCompanies);
 
