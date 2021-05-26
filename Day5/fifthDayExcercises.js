@@ -146,7 +146,7 @@ console.log(sentence);
 
 // /*13. Check if a certain company exists in the itCompanies array. 
 // If it exist return the company else return a company is not found*/
-function companyExistArray(array, company) {
+function checkCompanyExist(array, company) {
   const companyExist = array.indexOf(company) === 0;
   if (companyExist) {
     return company;
@@ -155,7 +155,7 @@ function companyExistArray(array, company) {
   }
 }
 
-const company = companyExistArray(itCompanies, 'Facebook');
+const company = checkCompanyExist(itCompanies, 'Facebook');
 console.log(company);
 
 // //14. Filter out companies which have more than one 'o' without the filter method
