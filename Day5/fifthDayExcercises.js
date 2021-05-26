@@ -128,8 +128,7 @@ printOutArray(itCompanies);
 
 //11. Change each company name to uppercase one by one and print them out
 function changeToUppercase(arrayInput) {
-  const uppercase = arrayInput.map(company => company.toUpperCase());
-  return uppercase;
+  return arrayInput.map(company => company.toUpperCase());
 }
 
 const toUpperCase = changeToUppercase(itCompanies);
