@@ -4,13 +4,13 @@ const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24];
 //1. The following is an array of 10 students ages:
 //Sort the array and find the min and max age
 function sortToFindPositions(array, position) {
-  const sortArray = array.sort((a, b) => a - b);
+  const sortedArrays = array.sort((a, b) => a - b);
   if (position === 'min') {
-    const firstPositionArray = sortArray[0];
+    const firstPositionArray = sortedArrays[0];
     return firstPositionArray;
   }
   if (position === 'max') {
-    let lastAPositionArray = sortArray[sortArray.length - 1];
+    let lastAPositionArray = sortedArrays[sortedArrays.length - 1];
     return lastAPositionArray;
   }
 }
