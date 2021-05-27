@@ -204,7 +204,7 @@ console.log(newArray);
 // 'ETHIOPIA'. If it does not exist add to the countries list.*/
 
 function findCountry(array = [], country = '') {
-  const hasCountry = array.indexOf(country) === -1
+  const hasCountry = array.indexOf(country) === -1;
   if (hasCountry) {
     array.push(country);
     console.log(`${country} has been added to the list`);

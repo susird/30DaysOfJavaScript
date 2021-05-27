@@ -75,18 +75,18 @@ console.log(lasITCompany);
 const removeAllIt = itCompanies.splice();
 console.log(removeAllIt);
 //another way
-function removeAllElements(shoppingCart) {
+function removeAllElements(arrayInput) {
   const newArray = [];
   function removeElements(array) {
-    if (array === shoppingCart1) {
+    if (array === arrayInput) {
       newArray.push();
     }
   };
-  shoppingCart.forEach(removeElements);
+  arrayInput.forEach(removeElements);
   return newArray;
 }
 
-const removedElements = removeAllElements(shoppingCart1);
+const removedElements = removeAllElements(itCompanies);
 console.log(removedElements);
 
 //LEVEL 2
@@ -134,7 +134,7 @@ function removeElement(itemToDelete, isAllergic, shoppingCart) {
   return newArray;
 }
 
-const removedItem = removeElement('Honey', true, shoppingCart1);
+const removedItem = removeElement('Honey', true, shoppingCart);
 console.log(removedItem);
 
 //modify Tea to 'Green Tea'
@@ -151,5 +151,5 @@ function modifyElement(itemToModify, ItemToAdd, shoppingCart) {
   return newArray;
 }
 
-const modifyedItem = modifyElement('Tea', 'Green Tea', shoppingCart1);
+const modifyedItem = modifyElement('Tea', 'Green Tea', shoppingCart);
 console.log(modifyedItem);
