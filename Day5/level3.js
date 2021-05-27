@@ -72,7 +72,7 @@ function compareValuesArray(array) {
   const minLessAverage = Math.abs(firstPositionArray - averageArray);
   if (maxLessAverage === minLessAverage) {
     return 'The values are the same';
-  }else {
+  } else {
     return 'The values are different';
   }
 }

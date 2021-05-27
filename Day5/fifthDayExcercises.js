@@ -223,7 +223,7 @@ function findWebTechs(array, tech) {
     console.log(array);
   } else {
     const techExist = `${tech} is a CSS preprocess`;
-    console.log(techExist); 
+    console.log(techExist);
   }
 }
 findWebTechs(webTechs, 'Sass');
