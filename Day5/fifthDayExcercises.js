@@ -226,7 +226,7 @@ function findWebTechs(array, tech) {
     console.log(techExist); 
   }
 }
-findWebTechs(webTechs2, 'Sass');
+findWebTechs(webTechs, 'Sass');
 
 // //6.Concatenate the following two variables and store it in a fullStack variable.
 const frontEnd = ['HTML', 'CSS', 'JS', 'React', 'Redux'];
