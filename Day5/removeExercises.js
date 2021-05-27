@@ -44,11 +44,11 @@ function removeElement(indexToDelete, array) {
   const printElementandIndex = (element, index) => {
     if (indexToDelete !== index) {
       newArray.push(element);
-    };
-  };
+    }
+  }
   array.forEach(printElementandIndex);
   return newArray;
-};
+}
 
 const middleITCompany = removeElement(calculateMiddleItCompany, itCompanies);
 console.log(middleITCompany);
@@ -108,17 +108,17 @@ const addedItemAtBeginning = itemShoppingCart('Meat');
 console.log(addedItemAtBeginning);
 
 //add Sugar at the end of you shopping cart if it has not been already added
-function itemShoppingCart(item) {
-  const itemExist = shoppingCart.indexOf(item) !== 0;
+function itemShoppingCart(item, array) {
+  const itemExist = array.indexOf(item) !== 0;
   if (itemExist) {
-    shoppingCart.push(item);
+    array.push(item);
     return console.log(shoppingCart);
   } else {
     return 'This item already exist in the shoppin cart';
   }
 }
 
-const addItemAtTheEnd = itemShoppingCart('Sugar');
+const addItemAtTheEnd = itemShoppingCart('Sugar', shoppingCart);
 console.log(addItemAtTheEnd);
 
 //remove 'Honey' if you are allergic to honey

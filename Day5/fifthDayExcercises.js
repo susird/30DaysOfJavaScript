@@ -204,31 +204,28 @@ console.log(newArray);
 // 'ETHIOPIA'. If it does not exist add to the countries list.*/
 
 function findCountry(array = [], country = '') {
-  const hasCountry = array.indexOf(country) !== -1;
+  const hasCountry = array.indexOf(country) === -1
   if (hasCountry) {
-    return country;
-  } else {
-    const mergedArrays = array.concat([country]);
-    return mergedArrays;
-  }
+    array.push(country)
+    console.log(`${country} has been added to the list`)
+  } else 
+  console.log(country.toUpperCase());
 }
-
-const country = findCountry(countries, 'Ethiopia');
-console.log(country);
+findCountry(countries, 'Ethiopia');
 
 /*5.In the webTechs array check if Sass exists in the array and if it exists print 'Sass is a
 CSS preprocess'. If it does not exist add Sass to the array and print the array.*/
 function findWebTechs(array, tech) {
-  const hasTech = array.indexOf(tech) !== -1;
+  const hasTech = array.indexOf(tech) === -1;
   if (hasTech) {
-    return `${tech} is a CSS preprocess`;
+    array.push(tech)
+    console.log(array)
   } else {
-    return array.concat([tech]);
+    const techExist = `${tech} is a CSS preprocess`;
+    console.log(techExist) 
   }
 }
-
-const webTechtoFind = findWebTechs(webTechs, 'Sass');
-console.log(webTechtoFind);
+findWebTechs(webTechs2, 'Sass');
 
 // //6.Concatenate the following two variables and store it in a fullStack variable.
 const frontEnd = ['HTML', 'CSS', 'JS', 'React', 'Redux'];
