@@ -206,10 +206,11 @@ console.log(newArray);
 function findCountry(array = [], country = '') {
   const hasCountry = array.indexOf(country) === -1
   if (hasCountry) {
-    array.push(country)
-    console.log(`${country} has been added to the list`)
-  } else 
-  console.log(country.toUpperCase());
+    array.push(country);
+    console.log(`${country} has been added to the list`);
+  } else {
+    console.log(country.toUpperCase());
+  }
 }
 findCountry(countries, 'Ethiopia');
 
@@ -218,11 +219,11 @@ CSS preprocess'. If it does not exist add Sass to the array and print the array.
 function findWebTechs(array, tech) {
   const hasTech = array.indexOf(tech) === -1;
   if (hasTech) {
-    array.push(tech)
-    console.log(array)
+    array.push(tech);
+    console.log(array);
   } else {
     const techExist = `${tech} is a CSS preprocess`;
-    console.log(techExist) 
+    console.log(techExist); 
   }
 }
 findWebTechs(webTechs2, 'Sass');
