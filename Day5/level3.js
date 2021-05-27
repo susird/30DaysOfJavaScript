@@ -42,7 +42,7 @@ console.log(middlePositionArray);
 //Find the average age(all items divided by number of items)
 function findAverage(array) {
   const sumElementsAgesArray = (accumulator, currentValue) => accumulator + currentValue;
-  const averageAge = array.reduce(sumElementsAgesArray) / array.length;
+  const averageAge = array.reduce(sumElementsAgesArray, 0) / array.length;
   return averageAge;
 }
 
