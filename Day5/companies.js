@@ -6,5 +6,5 @@ const itCompanies = [
   'IBM',
   'Oracle',
   'Amazon'];
-  
-  module.exports = itCompanies;
+
+module.exports = itCompanies;

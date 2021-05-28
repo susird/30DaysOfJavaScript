@@ -74,18 +74,12 @@ console.log(lasITCompany);
 const removeAllIt = itCompanies.splice();
 console.log(removeAllIt);
 //another way
-function removeAllElements(arrayInput) {
+function removeAllElements() {
   const newArray = [];
-  function removeElements(array) {
-    if (array === arrayInput) {
-      newArray.push();
-    }
-  };
-  arrayInput.forEach(removeElements);
   return newArray;
 }
 
-const removedElements = removeAllElements(itCompanies);
+const removedElements = removeAllElements();
 console.log(removedElements);
 
 //LEVEL 2

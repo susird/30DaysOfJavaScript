@@ -2,5 +2,6 @@ const shoppingCart = [
   'Milk',
   'Coffee',
   'Tea',
-  'Honey'];
-  module.exports = shoppingCart;
+  'Honey'
+];
+module.exports = shoppingCart;
