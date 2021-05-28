@@ -1,5 +1,6 @@
 const webTechs = require("./web_techs.js");
 const countries = require("./countries.js");
+const itCompanies = require("./companies.js");
 
 // 30 Days Of JavaScript: Arrays 
 //LEVEL 1
@@ -57,7 +58,6 @@ function getPositionItem(array, position) {
 const positionItem = getPositionItem(arrayOfNumbers, 'first');
 console.log(positionItem);
 
-
 /*5. Declare an array called mixedDataTypes, put different data types in the array and find the 
 length of the array. The array size should be greater than 5 */
 const mixDataTypes = ['Luna', 1995, true, [1, 2, 3], '1000', 55];
@@ -70,7 +70,6 @@ console.log(arrayLength);
 
 // /*6.Declare an array variable name itCompanies and assign initial values Facebook, Google, 
 // Microsoft, Apple, IBM, Oracle and Amazon */
-const itCompanies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon'];
 
 //7.Print the array using console.log()
 console.log(itCompanies);

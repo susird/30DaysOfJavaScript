@@ -1,4 +1,5 @@
-const itCompanies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon', 'Holi'];
+const itCompanies = require("./companies.js");
+const shoppingCart = require("./shopping_cart.js");
 
 function slicePositionElements(arrayInput, position) {
   if (position === 'first three') {
@@ -36,7 +37,6 @@ const middlePositionArray = slicePositionElements(itCompanies, 'middle');
 console.log(middlePositionArray);
 
 //21.Remove the middle IT company or companies from the array
-const itCompanies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon'];
 const calculateMiddleItCompany = Math.floor(itCompanies.length / 2);
 
 function removeElement(indexToDelete, array) {
@@ -54,7 +54,6 @@ const middleITCompany = removeElement(calculateMiddleItCompany, itCompanies);
 console.log(middleITCompany);
 
 //22.Remove the last IT company from the array
-const itCompanies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon'];
 const calculateMiddleItCompany = Math.floor(itCompanies.length - 1);
 
 function removeElement(indexToDelete, array) {
@@ -91,8 +90,6 @@ console.log(removedElements);
 
 //LEVEL 2
 //3.In the following shopping cart add, remove, edit items
-const shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey'];
-
 //add 'Meat' in the beginning of your shopping cart if it has not been already added
 function itemShoppingCart(item) {
   const itemExist = shoppingCart.indexOf(item) !== 0;

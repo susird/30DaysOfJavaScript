@@ -66,10 +66,10 @@ function compareValuesArray(array) {
   const sumElementsAgesArray = (accumulator, currentValue) => accumulator + currentValue;
   const averageArray = array.reduce(sumElementsAgesArray, 0) / array.length;
   const sortArray = array.sort((a, b) => a - b);
-  const firstPositionArray = sortArray[0];
-  const lastAPositionArray = sortArray[sortArray.length - 1];
-  const maxLessAverage = Math.abs(lastAPositionArray - averageArray);
-  const minLessAverage = Math.abs(firstPositionArray - averageArray);
+  const firstPosition = sortArray[0];
+  const lastPosition = sortArray[sortArray.length - 1];
+  const maxLessAverage = Math.abs(lastPosition - averageArray);
+  const minLessAverage = Math.abs(firstPosition - averageArray);
   if (maxLessAverage === minLessAverage) {
     return 'The values are the same';
   } else {
@@ -77,8 +77,8 @@ function compareValuesArray(array) {
   }
 }
 
-const comparitionValues = compareValuesArray(ages);
-console.log(comparitionValues);
+const comparisonValues = compareValuesArray(ages);
+console.log(comparisonValues);
 
 function slicePositionElements(arrayInput, position) {
   if (position === 'first teen') {
