@@ -151,4 +151,35 @@ function iterateOddNumbers(start, finish) {
 iterateOddNumbers(0, 100)
 
 //9.Use for loop to iterate from 0 to 100 and print only prime numbers
+function iteratePrimeNumbers() {
+  function validateIfIsPrime(num) {
+    let sumZero = 0;
+    for (let i = num; i > 0; i--) {
+      if (num % i === 0) {
+        sumZero++;
+      }
+    }
+    return sumZero === 2 && num > 1;
+  }
+  const [start, end] = [0, 100];
+  for (let i = start; i < end; i++) {
+    if (validateIfIsPrime(i)) {
+      console.log(i);
+    }
+  }
+}
+iteratePrimeNumbers(0, 100);
 
+//10. Use for loop to iterate from 0 to 100 and print the sum of all numbers.
+function iterateToSum () {
+  const [start, end] = [0, 100]
+  let sumNums = 0
+  for (let i = start; i <= end; i++) {
+    sumNums += i
+  }
+  return `The sum of all numbers from ${start} to ${end} is ${sumNums}.`
+}
+const sumLoopNumbers = iterateToSum();
+console.log(sumLoopNumbers);
+
+//11. Use for loop to iterate from 0 to 100 and print the sum of all evens and the sum of all odds.
