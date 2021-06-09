@@ -13,7 +13,7 @@
 // */
 function printMultiplication(start, end) {
   for (let i = start; i <= end; i++) {
-    console.log(`${i} * ${i} = ${i * i}`);
+    console.log(`${i} x ${i} = ${i * i}`);
   }
 }
 printMultiplication(0, 10);
