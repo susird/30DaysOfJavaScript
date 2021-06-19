@@ -9,6 +9,7 @@ function printPrimeNumbers(start, end) {
     }
     return counterPrimeNumbers  === 2 && num > 1;
   }
+  
   for (let i = start; i < end; i++) {
     if (validateIfIsPrime(i)) {
       console.log(i);
